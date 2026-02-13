@@ -1,5 +1,9 @@
 This is the Status Menu Builder for MVU Zod based character card.  It's a companion system that works with *any* MVU Zod based character card.  All the data will be saved locally on your computer and data will be persistent in Sillytavern.  Therefore, AI is NOT required to remember your stats nor the state of your characters.  The data is pull right out from a JSON file on your computer.  You just need to instruct how AI should add/update/remove data to the JSON file based on your rules in plain English or whatever language you use.  
 
+![Builder_Screenshot](Images/builder.jpg)
+
+
+
 Please see the demo at https://youtu.be/dOVmranK5yo
 
 It's an advance builder that would allow you to build layout of the status menu in any browser by just clicking and dragging.  All you need to do is to download the release from https://github.com/KritBlade/MVU_Zod_StatusMenuBuilder/releases/tag/v0.7.0   (MZSMB_v0.7.0.zip).  Unzip the file and double click the index.html.  
