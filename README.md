@@ -27,6 +27,7 @@ https://github.com/KritBlade/ArtificRealm/blob/main/PresetPatch/jailbreak.txt
 You can remove the lorebook entries in the Artific Realm character card to build your own story.  The character card is a playable demo to show case all the advance features that you can used.  In fact, it is a full feature RPG game with multiple characters tracking, which you can see the description here.  https://github.com/KritBlade/ArtificRealm
 
 
+---------------------------------------
 Regarding Advance logic:
 For any stats that is not inside a collection, the default pre-populated entry will look something like below.  You are reading from source "root", and the full path of the variable like "World.Date", the "Default" is the value if you want to have a default value.
 
@@ -37,3 +38,6 @@ For any stats that is a collection, the default pre-populated entry will look so
 _output = getV(stat, 'Occupation', 'Default');
 
 What is a collection?  Any items that can have more than 1 in the same category will be considered as collection.  For example, equipments, inventory, friends, compasion, familiar.  All these generic concept would have more than 1.  eg.  You can have more than 1 friend.  You can have more than 1 equipment.  By the same token, the World Date wouldn't be a collection because you can't have more than one date in a world.
+
+--------------------------------------
+The character card and the builder heavily utilize the extension Tavern Helper and ST-Prompte-Template.  It enable javascript can be used inside Sillytavern.  And it will work on any MVU Zod based character.  Tavern Helper is *the* default installation extension for the Chinese SillyTavern commnuity, we are talking about hundred of thousand of users have this installed by default.
