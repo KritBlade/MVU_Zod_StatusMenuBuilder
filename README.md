@@ -45,3 +45,4 @@ What is a collection?  Any items that can have more than 1 in the same category 
 
 --------------------------------------
 The character card and the builder heavily utilize the extension Tavern Helper and ST-prompt-Template.  It enable javascript can be used inside Sillytavern.  And it will work on any MVU Zod based character card.  Tavern Helper is *the* default installation extension for the Chinese SillyTavern commnuity, we are talking about hundred of thousand of users have this installed by default.  That means as long as you have these two extension installed, you are not bound to one single stat menu builder, any utility or characters card that utilize the Tavern Helper can be used without installing any other extension.  
+ 
