@@ -4,7 +4,7 @@ This is the Status Menu Builder for MVU Zod based character card.  It's a compan
 
 
 
-Please see the demo at https://youtu.be/dOVmranK5yo
+Please see the demo at https://youtu.be/y_cFT5Ty6vg
 
 It's an advance builder that would allow you to build layout of the status menu in any browser by just clicking and dragging.  All you need to do is to download the release from https://github.com/KritBlade/MVU_Zod_StatusMenuBuilder/releases/tag/v0.7.0   (MZSMB_v0.7.0.zip).  Unzip the file and double click the index.html.  
 
