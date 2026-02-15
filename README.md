@@ -28,7 +28,7 @@ https://github.com/KritBlade/ArtificRealm/blob/main/PresetPatch/chain_of_thought
 https://github.com/KritBlade/ArtificRealm/blob/main/PresetPatch/jailbreak.txt
 
 
-You can remove lorebook entries in the Artific Realm character card to build your own story.  The character card is a playable demo to show case all the advance features that you can use.  In fact, it is a full feature RPG game with multiple characters tracking, which you can see the description here.  https://github.com/KritBlade/ArtificRealm
+You can remove lorebook entries in the Artific Realm character card to build your own story.  The character card starting with v0.7.0 works with this Status Menu Builder and it is a playable demo to show case all the advance features that you can use.  In fact, it is a full feature RPG game with multiple characters tracking, which you can see the description here.  https://github.com/KritBlade/ArtificRealm
 
 
 ---------------------------------------
