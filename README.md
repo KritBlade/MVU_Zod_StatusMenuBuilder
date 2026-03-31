@@ -4,31 +4,24 @@ This is the Status Menu Builder for MVU Zod based character card.  It's a compan
 
 
 
-Please see the demo at https://youtu.be/y_cFT5Ty6vg
+Please see the usage demo at [youtube](https://youtu.be/y_cFT5Ty6vg)
 
-It's an advance builder that would allow you to build layout of the status menu in any browser by just clicking and dragging.  All you need to do is to download the release from https://github.com/KritBlade/MVU_Zod_StatusMenuBuilder/releases/tag/v0.7.0   (MZSMB_v0.7.0.zip).  Unzip the file and double click the index.html.  
+It's an advance builder that would allow you to build layout of the status menu in any browser by just clicking and dragging.  All you need to do is to download the release from [link here](https://github.com/KritBlade/MVU_Zod_StatusMenuBuilder/releases) .  Unzip the file and double click the index.html.  
 
-The builder will allow you to build custom stats based on your design.  There is no limit on what stats or variable you want to design in the status menu builder.  It comes with "Data Configuration" utility that will allow you to build sample data for your design.  "Schema Output" utility will allow you to define what is the structure of your data so that AI will follow your format to save into the variable.  The JSONPatch utility will auto generate rules to instruct how to add/update/remove variables into your story.  So, if you design equipments with 'type', 'quantity', 'description', the JSONPatch rules will instruct AI how to add the equipments into your story.  All you need is to copy and paste the auto generated JSONPatch rules into the lorebook.  The Template system will allow you to completely change the color and fonts for the status menu you design.  It also allow you to create custom template on how you want to display listing of your items (inventory, equipments...etc).  
+The builder will allow you to build custom stats based on your design.  There is no limit on what stats or variable you want to design in the status menu builder.  It comes with "Data Configuration" utility that will allow you to build sample data for your design.  "Schema Output" utility will allow you to define what is the structure of your data so that AI will follow your format to save into the variable.  The JSONPatch utility will auto generate rules to instruct how to add/update/remove variables into your story.  So, if you design equipments with 'type', 'quantity', 'description', the JSONPatch rules will instruct AI how to add the equipments into your story.  The Template system will allow you to completely change the color and fonts for the status menu you design.  It also allow you to create custom template on how you want to display listing of your items (inventory, equipments...etc).  
 
 The system comes with advance logic that allow you to write javascript inside the builder so that you can inject logic like (if Mainchar.level > 70, then make my color of Mainchar.Name become red in color).   Any variable within the system you designed can be manipulated in the Advance logic.  Moreover, the system also allows you to retrieve content of *any* lorebook entry inside your story in SillyTavern.  So, you can have some powerful logic like (If Mainchar.Level > 70 then retrieve the image URL inside lorebook entry 'post-70-map' and display the image in the Map image section, else read the image URL inside lorebook entry 'pre-70-map' and display the image in the Map image)  As long as you know javascript, you can pretty much build any custom logic inside the builder.
 
 
-You are required to install Tavern Helper extension as well as ST-prompt-Template extension in order to get the builder to work correctly in the character card.  You can see the full installation from https://www.youtube.com/watch?v=whRF0pJAzvs
+You are required to install Tavern Helper extension as well as ST-prompt-Template extension in order to get the builder to work correctly in the character card.  You can see the full installation from [youtube video](https://www.youtube.com/watch?v=Jh1ojfiqGXI)
 
-1. Install Tavern Helper extension into SillyTavern from https://github.com/N0VI028/JS-Slash-Runner  .  You can change the Tavern Helper to English Menu by changing the SillyTavern Language to English as in the picture shown. https://i.vgy.me/uRXAcO.jpg
+1. Install Tavern Helper extension into SillyTavern from [video here](https://github.com/N0VI028/JS-Slash-Runner)  .  You can change the Tavern Helper to English Menu by changing the SillyTavern Language to English as in the picture shown. https://i.vgy.me/uRXAcO.jpg
 
-2. Install ST-prompt-Template extension into SillyTavern from https://codeberg.org/zonde306/ST-Prompt-Template/
+2. Install ST-prompt-Template extension into SillyTavern from [link](https://codeberg.org/zonde306/ST-Prompt-Template/)
 
-3. Download the Preset Izumi English version.  You will need to do some patch so that it works with English thinking and jailbreak as shown in the video.  The link to download the preset at https://discord.com/invite/C6HabNwzn7
-
-4. Download the LATEST version of Artific Realm character card at https://github.com/KritBlade/ArtificRealm/tree/main/CharacterCard  (Click on the latest version of the character card and Press download raw file on upper right)
-
-5. Preset patch can be downloaded at
-https://github.com/KritBlade/ArtificRealm/blob/main/PresetPatch/chain_of_thought.txt
-https://github.com/KritBlade/ArtificRealm/blob/main/PresetPatch/jailbreak.txt
+3. The MVU Stats Menu builder works with [ArtificRealm Character Card](https://github.com/KritBlade/ArtificRealm)
 
 
-You can remove lorebook entries in the Artific Realm character card to build your own story.  The character card starting with v0.7.0 works with this Status Menu Builder and it is a playable demo to show case all the advance features that you can use.  In fact, it is a full feature RPG game with multiple characters tracking, which you can see the description here.  https://github.com/KritBlade/ArtificRealm
 
 
 ---------------------------------------
