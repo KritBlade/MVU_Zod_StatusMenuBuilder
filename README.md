@@ -15,7 +15,10 @@ The system comes with advance logic that allow you to write javascript inside th
 
 You are required to install Tavern Helper extension as well as ST-prompt-Template extension in order to get the builder to work correctly in the character card.  You can see the full installation from [youtube video](https://www.youtube.com/watch?v=Jh1ojfiqGXI)
 
-1. Install Tavern Helper extension into SillyTavern from [video here](https://github.com/N0VI028/JS-Slash-Runner)  .  You can change the Tavern Helper to English Menu by changing the SillyTavern Language to English as in the picture shown. https://i.vgy.me/uRXAcO.jpg
+1. Install Tavern Helper extension into SillyTavern from [link here](https://github.com/N0VI028/JS-Slash-Runner)  .  You can change the Tavern Helper to English Menu by changing the SillyTavern Language to English as in the picture shown. 
+![uRXAcO](https://github.com/user-attachments/assets/80a4b11d-ed4e-4b50-9951-5aa69d07057e)
+
+
 
 2. Install ST-prompt-Template extension into SillyTavern from [link](https://codeberg.org/zonde306/ST-Prompt-Template/)
 
