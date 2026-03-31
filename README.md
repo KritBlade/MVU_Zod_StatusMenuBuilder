@@ -16,13 +16,17 @@ The system comes with advance logic that allow you to write javascript inside th
 You are required to install Tavern Helper extension as well as ST-prompt-Template extension in order to get the builder to work correctly in the character card.  You can see the full installation from [youtube video](https://www.youtube.com/watch?v=Jh1ojfiqGXI)
 
 1. Install Tavern Helper extension into SillyTavern from [link here](https://github.com/N0VI028/JS-Slash-Runner)  .  You can change the Tavern Helper to English Menu by changing the SillyTavern Language to English as in the picture shown. 
+
 ![uRXAcO](https://github.com/user-attachments/assets/80a4b11d-ed4e-4b50-9951-5aa69d07057e)
 
 
 
 2. Install ST-prompt-Template extension into SillyTavern from [link](https://codeberg.org/zonde306/ST-Prompt-Template/)
 
-3. The MVU Stats Menu builder works with [ArtificRealm Character Card](https://github.com/KritBlade/ArtificRealm)
+3. Download the Preset Izumi English version.  The link to download the preset at [discord](https://discord.com/invite/C6HabNwzn7). Or [Megumin v4.1](https://www.reddit.com/r/SillyTavernAI/comments/1s1rbav/megumin_secret_sauce_v4_megumin_suite_every/) works as well.
+   
+
+5. The MVU Stats Menu builder works with [ArtificRealm Character Card](https://github.com/KritBlade/ArtificRealm)
 
 
 
