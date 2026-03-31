@@ -1,53 +1,73 @@
-This is the Status Menu Builder for MVU Zod based character card.  It's a companion system that works with *any* MVU Zod based character card.  All the data will be saved locally on your computer and data will be persistent in Sillytavern.  Therefore, AI is NOT required to remember your stats nor the state of your characters.  The data is pull right out from a JSON file on your computer.  You just need to instruct how AI should add/update/remove data to the JSON file based on your rules in plain English or whatever language you use.  
+# MVU Zod Status Menu Builder
 
-![Builder_Screenshot](Images/builder.jpg)
+> A companion system that works with **any** MVU Zod based character card!
 
-Please see the usage demo at [youtube](https://youtu.be/y_cFT5Ty6vg)
+This Status Menu Builder is an advanced tool that allows you to build the layout of a status menu in any browser simply by clicking and dragging. All data is saved locally on your computer and remains persistent in SillyTavern. 
 
-It's an advance builder that would allow you to build layout of the status menu in any browser by just clicking and dragging.  All you need to do is to download the release from [link here](https://github.com/KritBlade/MVU_Zod_StatusMenuBuilder/releases) .  Unzip the file and double click the index.html.  
+Because the data is pulled right out of a JSON file on your computer, the **AI is NOT required to remember your stats nor the state of your characters**. You simply instruct the AI on how to add, update, or remove data in the JSON file based on your own rules in plain English (or any language of your choice).
 
-The builder will allow you to build custom stats based on your design.  There is no limit on what stats or variable you want to design in the status menu builder.  
-- "Data Configuration" utility that will allow you to build sample data for your design.
-- "Schema Output" utility will allow you to define what is the structure of your data so that AI will follow your format to save into the variable.
-- "JSONPatch utility" will auto generate JSONPatch rules
-- "Template" system will allow you to completely change the color and fonts for the status menu you design.  It also allow you to create custom template on how you want to display listing of your items (inventory, equipments...etc).
-- "Logic" tab lets you equip or unequip gear. It now properly adds or removes equipment stat bonuses and recalculates your stats accordingly.
-- Advance Logic for each field.
-   - You can write javascript for each field to inject logic like (if Mainchar.level > 70, then make my color of Mainchar.Name become red in color)
-   - Allows you to retrieve content of *any* lorebook entry inside your story in SillyTavern.  So, you can have some powerful logic like (If Mainchar.Level > 70 then retrieve the image URL inside lorebook entry 'post-70-map' and display the image in the Map image section, else read the image URL inside lorebook entry 'pre-70-map' and display the image in the Map image)
+<div align="center">
+  <img alt="Builder Screenshot" src="Images/builder.jpg" />
+</div>
 
+📺 **[Watch the Usage Demo on YouTube](https://youtu.be/y_cFT5Ty6vg)**
 
+---
 
---------------------------
-Although the Builder do not need to have any extension to be installed, but the character game card does require two exntesion to be installed.  
+## 🚀 Getting Started
 
-You are required to install Tavern Helper extension as well as ST-prompt-Template extension in order to get the builder to work correctly in the character card.  You can see the full installation from [youtube video](https://www.youtube.com/watch?v=Jh1ojfiqGXI)
+All you need to do is download the release, extract it, and run it. No extensions are needed to *run the builder itself*:
 
-1. Install Tavern Helper extension into SillyTavern from [link here](https://github.com/N0VI028/JS-Slash-Runner)  .  You can change the Tavern Helper to English Menu by changing the SillyTavern Language to English as in the picture shown. 
+1. 📥 **[Download the Latest Release](https://github.com/KritBlade/MVU_Zod_StatusMenuBuilder/releases)**
+2. Unzip the downloaded file.
+3. Double-click on `index.html` to open the builder in your web browser.
 
-![uRXAcO](https://github.com/user-attachments/assets/80a4b11d-ed4e-4b50-9951-5aa69d07057e)
+---
 
+## ✨ Features
 
-2. Install ST-prompt-Template extension into SillyTavern from [link](https://codeberg.org/zonde306/ST-Prompt-Template/)
+The builder allows you to create custom stats based entirely on your design with absolutely no limits on what variables you can track:
 
-3. Download the Preset Izumi English version.  The link to download the preset at [discord](https://discord.com/invite/C6HabNwzn7). Or [Megumin v4.1](https://www.reddit.com/r/SillyTavernAI/comments/1s2pfj6/megumin_suite_v41_dev_mode_and_bug_fixes/) works as well.
-   
-5. The MVU Stats Menu builder works with [ArtificRealm Character Card](https://github.com/KritBlade/ArtificRealm)
+* 📊 **Data Configuration:** A utility that allows you to build sample data for your specific design.
+* 📝 **Schema Output:** Defines the structure of your data so the AI knows exactly what format to follow when saving variables.
+* 🧩 **JSONPatch Utility:** Automatically generates JSONPatch rules for you.
+* 🎨 **Template System:** Completely change the colors and fonts of your status menu. You can also create custom templates for how you want to display item lists (e.g., inventory, equipment).
+* ⚔️ **Logic Tab:** Equip or unequip gear dynamically. It automatically adds or removes equipment stat bonuses and recalculates your total stats accordingly.
+* 🧠 **Advanced Field Logic:** Inject JavaScript logic directly into individual fields!
+  * *Example 1 (Dynamic Styling):* `If Mainchar.level > 70, make the color of Mainchar.Name red.`
+  * *Example 2 (Lorebook Integration):* Retrieve the content of *any* lorebook entry inside your SillyTavern story. `If Mainchar.Level > 70, retrieve the image URL from lorebook entry 'post-70-map' and display it; else, read from 'pre-70-map'.`
 
+---
 
+## ⚙️ SillyTavern Installation Requirements
 
----------------------------------------
-Regarding Advance logic:
-For any stats that is not inside a collection, the default pre-populated entry will look something like below.  You are reading from source "root", and the full path of the variable like "World.Date", the "Default" is the value if you want to have a default value.
+While the *Builder* doesn't require extensions to run, your **character game card** *does* require two extensions to function correctly inside SillyTavern. 
 
+📺 **[Full Installation Video Guide](https://www.youtube.com/watch?v=Jh1ojfiqGXI)**
+
+**Step-by-Step Installation:**
+1. **Install Tavern Helper:** Download it from **[this link](https://github.com/N0VI028/JS-Slash-Runner)**. 
+   * *Tip:* You can change the Tavern Helper to an English menu by changing the SillyTavern Language to English, as shown below:
+   <div align="center">
+     <img alt="Tavern Helper Language Settings" src="https://github.com/user-attachments/assets/80a4b11d-ed4e-4b50-9951-5aa69d07057e" />
+   </div>
+2. **Install ST-Prompt-Template:** Download the extension from **[this link](https://codeberg.org/zonde306/ST-Prompt-Template/)**.
+3. **Download a Compatible Preset:**
+   * Get the **Izumi English Preset** from **[Discord](https://discord.com/invite/C6HabNwzn7)**.
+   * *Alternatively*, the **[Megumin v4.1 Preset](https://www.reddit.com/r/SillyTavernAI/comments/1s2pfj6/megumin_suite_v41_dev_mode_and_bug_fixes/)** works perfectly as well.
+4. **Play!** The MVU Stats Menu builder works seamlessly with the **[ArtificRealm Character Card](https://github.com/KritBlade/ArtificRealm)**.
+
+> **Why these extensions?** The character card and the builder heavily utilize *Tavern Helper* and *ST-Prompt-Template* to enable JavaScript inside SillyTavern. Tavern Helper alone has hundreds of thousands of active users in the Chinese SillyTavern community. As long as you have these two extensions installed, you can use any utility or character card built for them without needing to install anything else!
+
+---
+
+## 🛠️ Advanced Logic Guide
+
+Here is a quick reference for writing custom logic inside the builder:
+
+### Standard Variables (Non-Collections)
+For any stat that is *not* inside a collection, the default pre-populated entry will read from the `"root"` source using the full path of the variable (e.g., `World.Date`). 
+
+```javascript
+// 'Default' is the fallback value if the variable is empty.
 _output = getV(root, 'World.Date', 'Default');
-
-For any stats that is a collection, the default pre-populated entry will look something like below.  You are reading from source "stat", and you will use the relative path for the variable like "Occupation", the "Default" is the value if you want to have a default value.
-
-_output = getV(stat, 'Occupation', 'Default');
-
-What is a collection?  Any items that can have more than 1 in the same category will be considered as collection.  For example, equipments, inventory, friends, compasion, familiar.  All these generic concept would have more than 1.  eg.  You can have more than 1 friend.  You can have more than 1 equipment.  By the same token, the World Date wouldn't be a collection because you can't have more than one date in a world.
-
---------------------------------------
-The character card and the builder heavily utilize the extension Tavern Helper and ST-Prompt-Template.  It enable javascript can be used inside Sillytavern.  And it will work on any MVU Zod based character card.  Tavern Helper have hundred of thousand of users installed on their Sillytavern in the Chinese Sillytavern community.  The userbase is extremely large.  That means as long as you have these two extension installed, you are not bound to one single stat menu builder, any utility or characters card that utilize the Tavern Helper can be used without installing any other extension.
- 
