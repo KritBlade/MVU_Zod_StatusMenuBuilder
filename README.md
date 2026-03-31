@@ -23,7 +23,7 @@ You are required to install Tavern Helper extension as well as ST-prompt-Templat
 
 2. Install ST-prompt-Template extension into SillyTavern from [link](https://codeberg.org/zonde306/ST-Prompt-Template/)
 
-3. Download the Preset Izumi English version.  The link to download the preset at [discord](https://discord.com/invite/C6HabNwzn7). Or [Megumin v4.1](https://www.reddit.com/r/SillyTavernAI/comments/1s1rbav/megumin_secret_sauce_v4_megumin_suite_every/) works as well.
+3. Download the Preset Izumi English version.  The link to download the preset at [discord](https://discord.com/invite/C6HabNwzn7). Or [Megumin v4.1](https://www.reddit.com/r/SillyTavernAI/comments/1s2pfj6/megumin_suite_v41_dev_mode_and_bug_fixes/) works as well.
    
 
 5. The MVU Stats Menu builder works with [ArtificRealm Character Card](https://github.com/KritBlade/ArtificRealm)
