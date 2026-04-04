@@ -54,7 +54,7 @@ While the *Builder* doesn't require extensions to run, your **character game car
 2. **Install ST-Prompt-Template:** Download the extension from **[this link](https://codeberg.org/zonde306/ST-Prompt-Template/)**.
 3. **Download a Compatible Preset:**
    * Get the **Izumi English Preset** from **[Discord](https://discord.com/invite/C6HabNwzn7)**.
-   * *Alternatively*, the **[Megumin v4.1 Preset](https://www.reddit.com/r/SillyTavernAI/comments/1s2pfj6/megumin_suite_v41_dev_mode_and_bug_fixes/)** works perfectly as well.
+   * *Alternatively*, the **[Megumin v5.0 Preset](https://github.com/Arif-salah/Megumin-Suite)** works perfectly as well with MVU compatiblity.
 4. **Play!** The MVU Stats Menu builder works seamlessly with the **[ArtificRealm Character Card](https://github.com/KritBlade/ArtificRealm)**.
 
 > **Why these extensions?** The character card and the builder heavily utilize *Tavern Helper* and *ST-Prompt-Template* to enable JavaScript inside SillyTavern. Tavern Helper alone has hundreds of thousands of active users in the Chinese SillyTavern community. As long as you have these two extensions installed, you can use any utility or character card built for them without needing to install anything else!
