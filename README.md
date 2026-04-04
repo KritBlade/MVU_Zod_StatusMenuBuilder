@@ -60,6 +60,8 @@ While the *Builder* doesn't require extensions to run, your **character game car
 > **Why these extensions?** The character card and the builder heavily utilize *Tavern Helper* and *ST-Prompt-Template* to enable JavaScript inside SillyTavern. Tavern Helper alone has hundreds of thousands of active users in the Chinese SillyTavern community. As long as you have these two extensions installed, you can use any utility or character card built for them without needing to install anything else!
 
 ---
+## FAQ
+1. If you run into problem on CSS or structural issue which the output in SillyTavern doesn't match what it looks in the builder, go to Template Tab in builder and click on "StatusMenu(Global CSS), and then press the Reset to Default button on the right"
 
 ## 🛠️ Advanced Logic Guide
 
