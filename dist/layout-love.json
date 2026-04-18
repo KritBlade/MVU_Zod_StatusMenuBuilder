@@ -183,7 +183,9 @@
               "title": "",
               "mappedKey": "Mainchar.Quests",
               "sourceType": "variable",
-              "layoutMode": "quest"
+              "layoutMode": "quest",
+              "allowDelete": true,
+              "allowEdit": true
             }
           ]
         },
@@ -198,7 +200,9 @@
               "type": "QuestList",
               "title": "",
               "mappedKey": "Mainchar.Skills",
-              "sourceType": "variable"
+              "sourceType": "variable",
+              "allowEdit": true,
+              "allowDelete": true
             }
           ]
         }
@@ -773,7 +777,9 @@
                       "width": 100,
                       "sourceType": "variable",
                       "mappedKey": "Partner.PositiveMemories",
-                      "collapsed": true
+                      "collapsed": true,
+                      "allowEdit": true,
+                      "allowDelete": true
                     },
                     {
                       "id": "crd-1776349384935",
@@ -782,7 +788,9 @@
                       "width": 100,
                       "sourceType": "variable",
                       "mappedKey": "Partner.NegativeMemories",
-                      "collapsed": true
+                      "collapsed": true,
+                      "allowEdit": true,
+                      "allowDelete": true
                     },
                     {
                       "id": "crd-1776349397845",
@@ -791,7 +799,9 @@
                       "width": 100,
                       "sourceType": "variable",
                       "mappedKey": "Partner.ImportantEvents",
-                      "collapsed": true
+                      "collapsed": true,
+                      "allowEdit": true,
+                      "allowDelete": true
                     },
                     {
                       "id": "crd-1776349417676",
@@ -800,7 +810,9 @@
                       "width": 100,
                       "sourceType": "variable",
                       "mappedKey": "Partner.Friends",
-                      "collapsed": true
+                      "collapsed": true,
+                      "allowEdit": true,
+                      "allowDelete": true
                     }
                   ]
                 },
@@ -812,7 +824,9 @@
                   "sourceType": "variable",
                   "mappedKey": "Partner.Belongings",
                   "customLogic": "_output = 'Belongings';",
-                  "collapsed": true
+                  "collapsed": true,
+                  "allowEdit": true,
+                  "allowDelete": true
                 }
               ]
             }
@@ -841,7 +855,9 @@
               "width": 100,
               "mappedKey": "Mainchar.Belongings",
               "sourceType": "variable",
-              "layoutMode": "equipment-action"
+              "layoutMode": "equipment-action",
+              "allowEdit": true,
+              "allowDelete": true
             }
           ]
         },
@@ -859,7 +875,9 @@
               "mappedKey": "Mainchar.Inventory",
               "sourceType": "variable",
               "layoutMode": "inventory",
-              "listType": "inventory"
+              "listType": "inventory",
+              "allowEdit": true,
+              "allowDelete": true
             }
           ]
         }
@@ -896,7 +914,8 @@
                   "sourceType": "variable",
                   "mappedKey": "World_Calc.Locations",
                   "collapsed": true,
-                  "allowEdit": true
+                  "allowEdit": true,
+                  "allowDelete": true
                 },
                 {
                   "id": "crd-1776376579620",
@@ -906,7 +925,8 @@
                   "sourceType": "variable",
                   "mappedKey": "World_Calc.Events",
                   "collapsed": true,
-                  "allowEdit": true
+                  "allowEdit": true,
+                  "allowDelete": true
                 },
                 {
                   "id": "crd-1776376604351",
@@ -916,7 +936,8 @@
                   "sourceType": "variable",
                   "mappedKey": "World_Calc.NPCs",
                   "collapsed": true,
-                  "allowEdit": true
+                  "allowEdit": true,
+                  "allowDelete": true
                 }
               ]
             }
