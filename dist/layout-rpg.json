@@ -456,7 +456,7 @@
                   "type": "Checkbox",
                   "title": "Present",
                   "mappedKey": "Familiar.Is_present",
-                  "width": 25,
+                  "width": 49,
                   "sourceType": "variable"
                 },
                 {
@@ -464,7 +464,7 @@
                   "type": "Checkbox",
                   "title": "BattleTeam",
                   "mappedKey": "Familiar.Is_in_battle_team",
-                  "width": 25,
+                  "width": 49,
                   "sourceType": "variable"
                 },
                 {
@@ -657,7 +657,7 @@
                   "id": "crd-1775040487053",
                   "type": "StatRow",
                   "title": "Age",
-                  "width": 59,
+                  "width": 58,
                   "sourceType": "variable",
                   "mappedKey": "Familiar.Age"
                 },
@@ -714,7 +714,7 @@
                   "type": "StatRow",
                   "title": "M_Lv",
                   "mappedKey": "Familiar.M_level",
-                  "width": 24,
+                  "width": 19,
                   "sourceType": "variable"
                 },
                 {
@@ -722,7 +722,7 @@
                   "type": "StatRow",
                   "title": "Lewd",
                   "mappedKey": "Familiar.Lewdness",
-                  "width": 24,
+                  "width": 19,
                   "sourceType": "variable"
                 },
                 {
@@ -821,7 +821,9 @@
             }
           ],
           "width": 100,
-          "mappedKey": "Familiar"
+          "mappedKey": "Familiar",
+          "showQuickJump": true,
+          "pageSize": 5
         }
       ],
       "containerWidth": 60,
@@ -951,20 +953,80 @@
               "type": "Image",
               "title": "Card Title",
               "width": 100,
-              "mappedKey": "Mainchar.Image",
-              "sourceType": "lorebook",
+              "mappedKey": "World.MapImage",
+              "sourceType": "variable",
               "lorebookKey": "Map",
-              "customLogic": "_output = getV(root, 'Mainchar.Level', 0) > 70 ? 'post-70-map' : 'pre-70-map';"
+              "customLogic": "_output = getV(root, 'World.MapImage');\n// Example: _output = getV(root, 'level') > 10 ? 'high.png' : 'low.png';"
             }
           ],
-          "mappedKey": "Mainchar"
+          "mappedKey": "World"
+        },
+        {
+          "id": "blk-1776467005665",
+          "title": "World Events",
+          "width": 100,
+          "layoutMode": "list",
+          "cards": [
+            {
+              "id": "crd-1776467012435",
+              "type": "GridContainer",
+              "title": "",
+              "width": 100,
+              "sourceType": "variable",
+              "layoutMode": "list",
+              "mappedKey": "",
+              "cards": [
+                {
+                  "id": "crd-1776467032936",
+                  "type": "QuestList",
+                  "title": "Factions",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "mappedKey": "World_Calc.Factions",
+                  "collapsed": true,
+                  "allowEdit": true
+                },
+                {
+                  "id": "crd-1776467290754",
+                  "type": "QuestList",
+                  "title": "Locations",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "mappedKey": "World_Calc.Locations",
+                  "collapsed": true,
+                  "allowEdit": true
+                },
+                {
+                  "id": "crd-1776467309736",
+                  "type": "QuestList",
+                  "title": "Ruins",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "mappedKey": "World_Calc.Ruins",
+                  "collapsed": true,
+                  "allowEdit": true
+                },
+                {
+                  "id": "crd-1776467328410",
+                  "type": "QuestList",
+                  "title": "Events",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "mappedKey": "World_Calc.Events",
+                  "collapsed": true,
+                  "allowEdit": true
+                }
+              ]
+            }
+          ],
+          "mappedKey": "World_Calc"
         }
       ],
       "containerWidth": 60,
       "containerWidthUnit": "%"
     }
   ],
-  "mvuData": "{\n  \"World_Calc\": {\n    \"Factions\": {},\n    \"Locations\": {},\n    \"Ruins\": {},\n    \"Events\": {}\n  },\n  \"World\": {\n    \"Date\": [\n      \"July 7, 1577\",\n      \"Date\"\n    ],\n    \"Time\": [\n      \"8:00\",\n      \"Time\"\n    ],\n    \"Location\": [\n      \"Abandoned Shack Outside Bluewatch Village\",\n      \"Location\"\n    ],\n    \"Weather\": [\n      \"Clear\",\n      \"Weather\"\n    ]\n  },\n  \"Mainchar\": {\n    \"Name\": [\n      \"{{user}}\",\n      \"Name\"\n    ],\n    \"Age\": [\n      \"18\",\n      \"Age\"\n    ],\n    \"Gender\": [\n      \"Male\",\n      \"Gender\"\n    ],\n    \"Image\": [\n      \"\",\n      \"Portrait\"\n    ],\n    \"Race\": [\n      \"Human\",\n      \"Race\"\n    ],\n    \"Occupation\": [\n      \"Spellsword\",\n      \"Occupation\"\n    ],\n    \"Level\": [\n      1,\n      \"Level\"\n    ],\n    \"Exp\": [\n      0,\n      \"Experience\"\n    ],\n    \"Core-points\": [\n      0,\n      \"Unassigned Points\"\n    ],\n    \"Mental_state\": [\n      \"Calm\",\n      \"Mental State\"\n    ],\n    \"Strength\": [\n      15,\n      \"Strength\"\n    ],\n    \"Agility\": [\n      10,\n      \"Agility\"\n    ],\n    \"Constitution\": [\n      15,\n      \"Constitution\"\n    ],\n    \"Intelligence\": [\n      10,\n      \"Intelligence\"\n    ],\n    \"Wisdom\": [\n      10,\n      \"Wisdom\"\n    ],\n    \"Charisma\": [\n      80,\n      \"Charisma\"\n    ],\n    \"Hp_curr\": [\n      135,\n      \"Current HP\"\n    ],\n    \"Hp_max\": [\n      135,\n      \"Max HP\"\n    ],\n    \"Mp_curr\": [\n      38,\n      \"Current MP\"\n    ],\n    \"Mp_max\": [\n      38,\n      \"Max MP\"\n    ],\n    \"Sta_curr\": [\n      120,\n      \"Current Stamina\"\n    ],\n    \"Sta_max\": [\n      120,\n      \"Max Stamina\"\n    ],\n    \"Physical_attack\": [\n      32,\n      \"Physical Attack\"\n    ],\n    \"Physical_defense\": [\n      10,\n      \"Physical Defense\"\n    ],\n    \"Magic_attack\": [\n      22,\n      \"Magic Attack\"\n    ],\n    \"Magic_defense\": [\n      8,\n      \"Magic Defense\"\n    ],\n    \"Magic_assist\": [\n      21,\n      \"Magic Support\"\n    ],\n    \"Quests\": {\n      \"MQ_2_Reach_the_Village_Safety\": {\n        \"Desc\": \"the desc of the quest\",\n        \"Difficulty\": \"F\",\n        \"Reward\": \"Information about the world\",\n        \"Status\": \"active\",\n        \"LastUpdated\": \"1577-07-28 09:30\"\n      }\n    },\n    \"Skills\": {\n      \"Dragon Kick\": {\n        \"Desc\": \"Dragon Kick - 130% damage\"\n      }\n    },\n    \"Equipment\": {\n      \"Beginner Sword\": {\n        \"Type\": \"Weapon\",\n        \"Qty\": 1,\n        \"Desc\": \"Lv 1. Common. +5 Physical Damage. Beginner Sword\",\n        \"Rarity\": \"Common\",\n        \"Slot\": \"Right Hand\",\n        \"EquipmentLevel\": 1,\n        \"Appearance\": \"Beginner look\"\n      }\n    },\n    \"Inventory\": {\n      \"Copper\": {\n        \"Type\": \"Money\",\n        \"Qty\": 30,\n        \"Desc\": \"Basic Healing Potion\"\n      },\n      \"Healing Potion\": {\n        \"Type\": \"Potion\",\n        \"Qty\": 3,\n        \"Desc\": \"Heal small amount of HP\"\n      }\n    },\n    \"Talents\": {\n      \"Dragon Chi\": {\n        \"Desc\": \"Dragon Chi - 100% increase in stats, drain all SP in 3 rounds.\"\n      }\n    },\n    \"Real_estate\": {\n      \"Estates\": {},\n      \"Buildings\": {},\n      \"Assets\": {}\n    },\n    \"Buffs\": {\n      \"Buff A\": {\n        \"Desc\": \"Buff\"\n      }\n    },\n    \"Ailments\": {\n      \"Debuff A\": {\n        \"Desc\": \"Debuff\"\n      }\n    }\n  },\n  \"Familiar\": {\n    \"Engni\": {\n      \"Name\": [\n        \"Engni Visetta\",\n        \"Name\"\n      ],\n      \"Age\": [\n        \"21 years old (soul age 50+)\",\n        \"Age\"\n      ],\n      \"Gender\": [\n        \"Female\",\n        \"Gender\"\n      ],\n      \"Race\": [\n        \"Elf\",\n        \"Race\"\n      ],\n      \"Identity\": [\n        \"Exiled Nun / Former Cardinal\",\n        \"Identity\"\n      ],\n      \"Occupation\": [\n        \"Cleric\",\n        \"Occupation\"\n      ],\n      \"Level\": [\n        1,\n        \"Level\"\n      ],\n      \"Exp\": [\n        0,\n        \"Experience\"\n      ],\n      \"Core-points\": [\n        0,\n        \"Unassigned Points\"\n      ],\n      \"Location\": [\n        \"Abandoned Shack Outside Bluewatch Village\",\n        \"Location\"\n      ],\n      \"Height\": [\n        \"160cm\",\n        \"Height\"\n      ],\n      \"Cup_Size\": [\n        \"K Cup\",\n        \"Cup Size\"\n      ],\n      \"Body_Measurements\": [\n        \"108-58-102\",\n        \"Measurements\"\n      ],\n      \"Hair_Style\": [\n        \"Waist-length silver hair, usually hidden beneath a nun’s veil\",\n        \"Hairstyle\"\n      ],\n      \"Physical_Features\": [\n        \"Heart-shaped pupils that appear when aroused\",\n        \"Physical Traits\"\n      ],\n      \"Personality\": [\n        \"Appears fragile and pitiful, but inwardly extremely self-serving and driven by desire\",\n        \"Personality\"\n      ],\n      \"Image\": [\n        \"https://raw.githubusercontent.com/KritBlade/ArtificRealm/refs/heads/main/Image/Engni.jpg\",\n        \"Avatar\"\n      ],\n      \"Hp_curr\": [\n        85,\n        \"Current HP\"\n      ],\n      \"Hp_max\": [\n        85,\n        \"Max HP\"\n      ],\n      \"Mp_curr\": [\n        56,\n        \"Current MP\"\n      ],\n      \"Mp_max\": [\n        56,\n        \"Max MP\"\n      ],\n      \"Sta_curr\": [\n        92,\n        \"Current Stamina\"\n      ],\n      \"Sta_max\": [\n        92,\n        \"Max Stamina\"\n      ],\n      \"Strength\": [\n        5,\n        \"Strength\"\n      ],\n      \"Agility\": [\n        8,\n        \"Agility\"\n      ],\n      \"Constitution\": [\n        7,\n        \"Constitution\"\n      ],\n      \"Intelligence\": [\n        15,\n        \"Intelligence\"\n      ],\n      \"Wisdom\": [\n        20,\n        \"Wisdom\"\n      ],\n      \"Charisma\": [\n        85,\n        \"Charisma\"\n      ],\n      \"Physical_attack\": [\n        12,\n        \"Physical Attack\"\n      ],\n      \"Physical_defense\": [\n        6,\n        \"Physical Defense\"\n      ],\n      \"Magic_attack\": [\n        32,\n        \"Magic Attack\"\n      ],\n      \"Magic_defense\": [\n        13,\n        \"Magic Defense\"\n      ],\n      \"Magic_assist\": [\n        39,\n        \"Magic Support\"\n      ],\n      \"Affection\": [\n        90,\n        \"Affection\"\n      ],\n      \"Lewdness\": [\n        12,\n        \"Lewdness\"\n      ],\n      \"Control_desire\": [\n        80,\n        \"Desire for Control\"\n      ],\n      \"M_level\": [\n        5,\n        \"Masochism Level\"\n      ],\n      \"Is_in_battle_team\": [\n        true,\n        \"In Battle Team\"\n      ],\n      \"Is_present\": [\n        true,\n        \"Present Nearby\"\n      ],\n      \"Familiar_Status\": [\n        \"Not a Familiar\",\n        \"Familiar Status\"\n      ],\n      \"ExSkill\": [\n        \"None for now\",\n        \"Finisher Skill\"\n      ],\n      \"Biography\": [\n        \"A former cardinal of the Goddess Flatu, disguising herself as an exiled nun. A reincarnator. Outwardly, she appears as a pitiful nun clad in revealing latex garments; in truth, she is profoundly self-serving and deeply calculating. She seeks to bind herself tightly to {{user}} through beauty and acting in order to escape the coming apocalypse, unaware that she has always been nothing more than a chess piece of the goddess.\",\n        \"Biography\"\n      ],\n      \"Equipment\": {\n        \"Basic Staff\": {\n          \"Type\": \"Weapon\",\n          \"Qty\": 1,\n          \"Desc\": \"Lv 1. Common. +5 Magic Damage. Beginner Staff\",\n          \"Rarity\": \"Common\",\n          \"Slot\": \"Right Hand\",\n          \"EquipmentLevel\": 1,\n          \"Appearance\": \"Beginner look\"\n        }\n      },\n      \"Sex_count\": [\n        0,\n        \"Sex Count\"\n      ],\n      \"Secret\": [\n        \"<ul><li>Reincarnator: Possesses memories spanning dozens of future years, including many major events and secrets.</li><li>Her reliance on emotional manipulation and bodily offering stems primarily from deep insecurity.</li><li>Goddess’s Backdoor: A divine spark and soul fragment were silently implanted deep within her soul by the goddess Flatu; all her actions are monitored and guided by the goddess’s plan, of which she is completely unaware.</li><li>Former Cardinal Knowledge: Holds extensive knowledge of gods, demons, and forbidden rituals.</li></ul>\",\n        \"Secret\"\n      ]\n    }\n  },\n  \"MVUStatMenu_DB_Ver\": \"0.9\",\n  \"GameStarted\": false\n}",
+  "mvuData": "{\n  \"World_Calc\": {\n    \"Factions\": {\n      \"Faction1\": {}\n    },\n    \"Locations\": {\n      \"Locations1\": {}\n    },\n    \"Ruins\": {\n      \"Ruins1\": {}\n    },\n    \"Events\": {\n      \"Events1\": {}\n    }\n  },\n  \"World\": {\n    \"Date\": [\n      \"July 7, 1577\",\n      \"Date\"\n    ],\n    \"Time\": [\n      \"8:00\",\n      \"Time\"\n    ],\n    \"Location\": [\n      \"Abandoned Shack Outside Bluewatch Village\",\n      \"Location\"\n    ],\n    \"Weather\": [\n      \"Clear\",\n      \"Weather\"\n    ],\n    \"MapImage\": [\n      \"\",\n      \"MapImage\"\n    ]\n  },\n  \"Mainchar\": {\n    \"Name\": [\n      \"{{user}}\",\n      \"Name\"\n    ],\n    \"Age\": [\n      \"18\",\n      \"Age\"\n    ],\n    \"Gender\": [\n      \"Male\",\n      \"Gender\"\n    ],\n    \"Image\": [\n      \"\",\n      \"Portrait\"\n    ],\n    \"Race\": [\n      \"Human\",\n      \"Race\"\n    ],\n    \"Occupation\": [\n      \"Spellsword\",\n      \"Occupation\"\n    ],\n    \"Level\": [\n      1,\n      \"Level\"\n    ],\n    \"Exp\": [\n      0,\n      \"Experience\"\n    ],\n    \"Core-points\": [\n      0,\n      \"Unassigned Points\"\n    ],\n    \"Mental_state\": [\n      \"Calm\",\n      \"Mental State\"\n    ],\n    \"Strength\": [\n      15,\n      \"Strength\"\n    ],\n    \"Agility\": [\n      10,\n      \"Agility\"\n    ],\n    \"Constitution\": [\n      15,\n      \"Constitution\"\n    ],\n    \"Intelligence\": [\n      10,\n      \"Intelligence\"\n    ],\n    \"Wisdom\": [\n      10,\n      \"Wisdom\"\n    ],\n    \"Charisma\": [\n      80,\n      \"Charisma\"\n    ],\n    \"Hp_curr\": [\n      135,\n      \"Current HP\"\n    ],\n    \"Hp_max\": [\n      135,\n      \"Max HP\"\n    ],\n    \"Mp_curr\": [\n      38,\n      \"Current MP\"\n    ],\n    \"Mp_max\": [\n      38,\n      \"Max MP\"\n    ],\n    \"Sta_curr\": [\n      120,\n      \"Current Stamina\"\n    ],\n    \"Sta_max\": [\n      120,\n      \"Max Stamina\"\n    ],\n    \"Physical_attack\": [\n      32,\n      \"Physical Attack\"\n    ],\n    \"Physical_defense\": [\n      10,\n      \"Physical Defense\"\n    ],\n    \"Magic_attack\": [\n      22,\n      \"Magic Attack\"\n    ],\n    \"Magic_defense\": [\n      8,\n      \"Magic Defense\"\n    ],\n    \"Magic_assist\": [\n      21,\n      \"Magic Support\"\n    ],\n    \"Quests\": {\n      \"MQ_2_Reach_the_Village_Safety\": {\n        \"Desc\": \"the desc of the quest\",\n        \"Difficulty\": \"F\",\n        \"Reward\": \"Information about the world\",\n        \"Status\": \"active\",\n        \"LastUpdated\": \"1577-07-28 09:30\"\n      }\n    },\n    \"Skills\": {\n      \"Dragon Kick\": {\n        \"Desc\": \"Dragon Kick - 130% damage\"\n      }\n    },\n    \"Equipment\": {\n      \"Beginner Sword\": {\n        \"Type\": \"Weapon\",\n        \"Qty\": 1,\n        \"Desc\": \"Lv 1. Common. +5 Physical Damage. Beginner Sword\",\n        \"Rarity\": \"Common\",\n        \"Slot\": \"Right Hand\",\n        \"EquipmentLevel\": 1,\n        \"Appearance\": \"Beginner look\"\n      }\n    },\n    \"Inventory\": {\n      \"Copper\": {\n        \"Type\": \"Money\",\n        \"Qty\": 30,\n        \"Desc\": \"Basic Healing Potion\"\n      },\n      \"Healing Potion\": {\n        \"Type\": \"Potion\",\n        \"Qty\": 3,\n        \"Desc\": \"Heal small amount of HP\"\n      }\n    },\n    \"Talents\": {\n      \"Dragon Chi\": {\n        \"Desc\": \"Dragon Chi - 100% increase in stats, drain all SP in 3 rounds.\"\n      }\n    },\n    \"Real_estate\": {\n      \"Estates\": {},\n      \"Buildings\": {},\n      \"Assets\": {}\n    },\n    \"Buffs\": {\n      \"Buff A\": {\n        \"Desc\": \"Buff\"\n      }\n    },\n    \"Ailments\": {\n      \"Debuff A\": {\n        \"Desc\": \"Debuff\"\n      }\n    }\n  },\n  \"Familiar\": {\n    \"Engni\": {\n      \"Name\": [\n        \"Engni Visetta\",\n        \"Name\"\n      ],\n      \"Age\": [\n        \"21 years old (soul age 50+)\",\n        \"Age\"\n      ],\n      \"Gender\": [\n        \"Female\",\n        \"Gender\"\n      ],\n      \"Race\": [\n        \"Elf\",\n        \"Race\"\n      ],\n      \"Identity\": [\n        \"Exiled Nun / Former Cardinal\",\n        \"Identity\"\n      ],\n      \"Occupation\": [\n        \"Cleric\",\n        \"Occupation\"\n      ],\n      \"Level\": [\n        1,\n        \"Level\"\n      ],\n      \"Exp\": [\n        0,\n        \"Experience\"\n      ],\n      \"Core-points\": [\n        0,\n        \"Unassigned Points\"\n      ],\n      \"Location\": [\n        \"Abandoned Shack Outside Bluewatch Village\",\n        \"Location\"\n      ],\n      \"Height\": [\n        \"160cm\",\n        \"Height\"\n      ],\n      \"Cup_Size\": [\n        \"K Cup\",\n        \"Cup Size\"\n      ],\n      \"Body_Measurements\": [\n        \"108-58-102\",\n        \"Measurements\"\n      ],\n      \"Hair_Style\": [\n        \"Waist-length silver hair, usually hidden beneath a nun’s veil\",\n        \"Hairstyle\"\n      ],\n      \"Physical_Features\": [\n        \"Heart-shaped pupils that appear when aroused\",\n        \"Physical Traits\"\n      ],\n      \"Personality\": [\n        \"Appears fragile and pitiful, but inwardly extremely self-serving and driven by desire\",\n        \"Personality\"\n      ],\n      \"Image\": [\n        \"https://raw.githubusercontent.com/KritBlade/ArtificRealm/refs/heads/main/Image/Engni.jpg\",\n        \"Avatar\"\n      ],\n      \"Hp_curr\": [\n        85,\n        \"Current HP\"\n      ],\n      \"Hp_max\": [\n        85,\n        \"Max HP\"\n      ],\n      \"Mp_curr\": [\n        56,\n        \"Current MP\"\n      ],\n      \"Mp_max\": [\n        56,\n        \"Max MP\"\n      ],\n      \"Sta_curr\": [\n        92,\n        \"Current Stamina\"\n      ],\n      \"Sta_max\": [\n        92,\n        \"Max Stamina\"\n      ],\n      \"Strength\": [\n        5,\n        \"Strength\"\n      ],\n      \"Agility\": [\n        8,\n        \"Agility\"\n      ],\n      \"Constitution\": [\n        7,\n        \"Constitution\"\n      ],\n      \"Intelligence\": [\n        15,\n        \"Intelligence\"\n      ],\n      \"Wisdom\": [\n        20,\n        \"Wisdom\"\n      ],\n      \"Charisma\": [\n        85,\n        \"Charisma\"\n      ],\n      \"Physical_attack\": [\n        12,\n        \"Physical Attack\"\n      ],\n      \"Physical_defense\": [\n        6,\n        \"Physical Defense\"\n      ],\n      \"Magic_attack\": [\n        32,\n        \"Magic Attack\"\n      ],\n      \"Magic_defense\": [\n        13,\n        \"Magic Defense\"\n      ],\n      \"Magic_assist\": [\n        39,\n        \"Magic Support\"\n      ],\n      \"Affection\": [\n        90,\n        \"Affection\"\n      ],\n      \"Lewdness\": [\n        12,\n        \"Lewdness\"\n      ],\n      \"Control_desire\": [\n        80,\n        \"Desire for Control\"\n      ],\n      \"M_level\": [\n        5,\n        \"Masochism Level\"\n      ],\n      \"Is_in_battle_team\": [\n        true,\n        \"In Battle Team\"\n      ],\n      \"Is_present\": [\n        true,\n        \"Present Nearby\"\n      ],\n      \"Familiar_Status\": [\n        \"Not a Familiar\",\n        \"Familiar Status\"\n      ],\n      \"ExSkill\": [\n        \"None for now\",\n        \"Finisher Skill\"\n      ],\n      \"Biography\": [\n        \"A former cardinal of the Goddess Flatu, disguising herself as an exiled nun. A reincarnator. Outwardly, she appears as a pitiful nun clad in revealing latex garments; in truth, she is profoundly self-serving and deeply calculating. She seeks to bind herself tightly to {{user}} through beauty and acting in order to escape the coming apocalypse, unaware that she has always been nothing more than a chess piece of the goddess.\",\n        \"Biography\"\n      ],\n      \"Equipment\": {\n        \"Basic Staff\": {\n          \"Type\": \"Weapon\",\n          \"Qty\": 1,\n          \"Desc\": \"Lv 1. Common. +5 Magic Damage. Beginner Staff\",\n          \"Rarity\": \"Common\",\n          \"Slot\": \"Right Hand\",\n          \"EquipmentLevel\": 1,\n          \"Appearance\": \"Beginner look\"\n        }\n      },\n      \"Sex_count\": [\n        0,\n        \"Sex Count\"\n      ],\n      \"Secret\": [\n        \"<ul><li>Reincarnator: Possesses memories spanning dozens of future years, including many major events and secrets.</li><li>Her reliance on emotional manipulation and bodily offering stems primarily from deep insecurity.</li><li>Goddess’s Backdoor: A divine spark and soul fragment were silently implanted deep within her soul by the goddess Flatu; all her actions are monitored and guided by the goddess’s plan, of which she is completely unaware.</li><li>Former Cardinal Knowledge: Holds extensive knowledge of gods, demons, and forbidden rituals.</li></ul>\",\n        \"Secret\"\n      ]\n    }\n  },\n  \"MVUStatMenu_DB_Ver\": \"0.9\",\n  \"GameStarted\": false\n}",
   "selectedPaths": [
     ".World_Calc",
     ".World_Calc.Factions",
@@ -1034,9 +1096,7 @@
     ".Mainchar.Equipment",
     ".Mainchar.Equipment.Beginner Sword",
     ".Mainchar.Inventory",
-    ".Mainchar.Inventory.Beginner Sword",
     ".Mainchar.Talents",
-    ".Mainchar.Companions",
     ".Mainchar.Real_estate",
     ".Mainchar.Buffs",
     ".Mainchar.Ailments",
@@ -1091,13 +1151,6 @@
     ".Mainchar.Equipment.Beginner Sword.Slot",
     ".Mainchar.Equipment.Beginner Sword.EquipmentLevel",
     ".Mainchar.Equipment.Beginner Sword.Appearance",
-    ".Mainchar.Inventory.Beginner Sword.Type",
-    ".Mainchar.Inventory.Beginner Sword.Qty",
-    ".Mainchar.Inventory.Beginner Sword.Desc",
-    ".Mainchar.Quests.MQ_2_Reach_the_Village_Safety.description",
-    ".Mainchar.Quests.MQ_2_Reach_the_Village_Safety.reward",
-    ".Mainchar.Quests.MQ_2_Reach_the_Village_Safety.difficulty",
-    ".Mainchar.Quests.MQ_2_Reach_the_Village_Safety.status",
     ".World_Calc.Locations",
     ".World_Calc.Ruins",
     ".World_Calc.Events",
@@ -1106,7 +1159,6 @@
     ".Mainchar.Inventory.Copper.Qty",
     ".Mainchar.Inventory.Copper.Desc",
     ".Mainchar.Equipment.Beginner Sword.Type",
-    ".Mainchar.Talents.Desc",
     ".Mainchar.Real_estate.Estates",
     ".Mainchar.Real_estate.Buildings",
     ".Mainchar.Real_estate.Assets",
@@ -1128,7 +1180,6 @@
     ".GameStarted",
     ".Familiar.Engni.Secret",
     ".Mainchar.Quests.MQ_2_Reach_the_Village_Safety.LastUpdated",
-    ".Mainchar.Skills.Desc",
     ".Mainchar.Skills.Dragon Kick",
     ".Mainchar.Skills.Dragon Kick.Desc",
     ".Mainchar.Ailments.Debuff A",
@@ -1142,7 +1193,11 @@
     ".Familiar.Engni.Age",
     ".Familiar.Engni.Age.0",
     ".Familiar.Engni.Gender",
-    ".Familiar.Engni.Gender.0"
+    ".Familiar.Engni.Gender.0",
+    ".World_Calc.Factions.Faction1",
+    ".World_Calc.Locations.Locations1",
+    ".World_Calc.Ruins.Ruins1",
+    ".World_Calc.Events.Events1"
   ],
   "collectionPaths": [
     ".Mainchar.Equipment",
@@ -1166,9 +1221,7 @@
     ".Mainchar.Quests.MQ_2_Reach_the_Village_Safety",
     ".Mainchar.Quests",
     ".World",
-    ".Mainchar.Talents.Dragon Chi",
-    ".Mainchar",
-    ".Familiar"
+    ".Mainchar.Talents.Dragon Chi"
   ],
   "lockTopLevel": true,
   "customTemplates": [],

@@ -1,0 +1,1207 @@
+{
+  "layout": [
+    {
+      "id": "tab-1",
+      "name": "Overview",
+      "blocks": [
+        {
+          "id": "blk-101",
+          "title": "Avatar",
+          "width": 30,
+          "mappedKey": "Mainchar",
+          "cards": [
+            {
+              "id": "crd-1001",
+              "type": "Image",
+              "title": "Avatar",
+              "mappedKey": "Mainchar.Image",
+              "width": 100,
+              "sourceType": "variable",
+              "imageScale": 80,
+              "customLogic": "_output = getV(stat, 'Image');"
+            }
+          ]
+        },
+        {
+          "id": "blk-102",
+          "title": "Core Status",
+          "width": 70,
+          "mappedKey": "",
+          "cards": [
+            {
+              "id": "crd-1010",
+              "type": "StatRow",
+              "title": "Name",
+              "mappedKey": "Mainchar.Name",
+              "width": 33,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1011",
+              "type": "StatRow",
+              "title": "Age",
+              "mappedKey": "Mainchar.Age",
+              "width": 33,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1012",
+              "type": "StatRow",
+              "title": "Gender",
+              "mappedKey": "Mainchar.Gender",
+              "width": 33,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1013",
+              "type": "StatRow",
+              "title": "Race",
+              "mappedKey": "Mainchar.Race",
+              "width": 33,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1014",
+              "type": "StatRow",
+              "title": "Job",
+              "mappedKey": "Mainchar.Occupation",
+              "width": 33,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1015",
+              "type": "StatRow",
+              "title": "Mental",
+              "mappedKey": "Mainchar.Mental_state",
+              "width": 33,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1018",
+              "type": "StatBar",
+              "title": "Energy",
+              "mappedKey": "Mainchar.Energy_curr",
+              "width": 100,
+              "sourceType": "variable",
+              "maxMappedKey": "Mainchar.Energy_max",
+              "barColor": "yellow"
+            },
+            {
+              "id": "crd-1019",
+              "type": "StatBar",
+              "title": "Stress",
+              "mappedKey": "Mainchar.Stress_Curr",
+              "width": 100,
+              "sourceType": "variable",
+              "maxMappedKey": "Mainchar.Stress_max"
+            },
+            {
+              "id": "crd-1016",
+              "type": "StatRow",
+              "title": "Charisma",
+              "mappedKey": "Mainchar.Charisma",
+              "width": 50,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1017",
+              "type": "StatRow",
+              "title": "SocialEnergy",
+              "mappedKey": "Mainchar.SocialEnergy",
+              "width": 50,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1020",
+              "type": "StatRow",
+              "title": "Money (JPM)",
+              "mappedKey": "Mainchar.Money",
+              "width": 50,
+              "sourceType": "variable",
+              "customLogic": "_output = `Ɉ ${getV(root, 'Mainchar.Money', 'Default')}`;"
+            },
+            {
+              "id": "crd-1021",
+              "type": "StatRow",
+              "title": "Salary (Monthly)",
+              "mappedKey": "Mainchar.Salary",
+              "width": 50,
+              "sourceType": "variable",
+              "customLogic": "_output = `Ɉ ${getV(root, 'Mainchar.Salary', 'Default')}`;"
+            }
+          ]
+        },
+        {
+          "id": "blk-103",
+          "title": "World Info",
+          "width": 100,
+          "mappedKey": "",
+          "cards": [
+            {
+              "id": "crd-1030",
+              "type": "StatRow",
+              "title": "Date",
+              "mappedKey": "World.Date",
+              "width": 33,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1031",
+              "type": "StatRow",
+              "title": "Time",
+              "mappedKey": "World.Time",
+              "width": 33,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1033",
+              "type": "StatRow",
+              "title": "Weather",
+              "mappedKey": "World.Weather",
+              "width": 33,
+              "sourceType": "variable"
+            },
+            {
+              "id": "crd-1032",
+              "type": "StatRow",
+              "title": "Location",
+              "mappedKey": "World.Location",
+              "width": 75,
+              "sourceType": "variable"
+            }
+          ]
+        },
+        {
+          "id": "blk-104",
+          "title": "Current Quests",
+          "width": 100,
+          "mappedKey": "Mainchar",
+          "cards": [
+            {
+              "id": "crd-1040",
+              "type": "QuestList",
+              "title": "",
+              "mappedKey": "Mainchar.Quests",
+              "sourceType": "variable",
+              "layoutMode": "quest"
+            }
+          ]
+        },
+        {
+          "id": "blk-105",
+          "title": "Skills",
+          "width": 100,
+          "mappedKey": "Mainchar",
+          "cards": [
+            {
+              "id": "crd-1050",
+              "type": "QuestList",
+              "title": "",
+              "mappedKey": "Mainchar.Skills",
+              "sourceType": "variable"
+            }
+          ]
+        }
+      ],
+      "containerWidth": 60,
+      "containerWidthUnit": "%"
+    },
+    {
+      "id": "tab-2",
+      "name": "Partners",
+      "blocks": [
+        {
+          "id": "blk-201",
+          "title": "Partner List",
+          "width": 100,
+          "mappedKey": "Partner",
+          "cards": [
+            {
+              "id": "crd-2001",
+              "type": "GridContainer",
+              "title": "<br>",
+              "width": 25,
+              "sourceType": "variable",
+              "layoutMode": "list",
+              "mappedKey": "",
+              "cards": [
+                {
+                  "id": "crd-2002",
+                  "type": "Image",
+                  "title": "Card Title",
+                  "width": 100,
+                  "imageScale": 90,
+                  "sourceType": "variable",
+                  "mappedKey": "Partner.Image"
+                }
+              ]
+            },
+            {
+              "id": "crd-2010",
+              "type": "GridContainer",
+              "title": "Partner Info",
+              "width": 75,
+              "mappedKey": "",
+              "sourceType": "variable",
+              "cards": [
+                {
+                  "id": "crd-2011",
+                  "type": "StatRow",
+                  "title": "Name",
+                  "mappedKey": "Partner.Name",
+                  "width": 40,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2012",
+                  "type": "StatRow",
+                  "title": "Age",
+                  "mappedKey": "Partner.Age",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2013",
+                  "type": "StatRow",
+                  "title": "Gender",
+                  "mappedKey": "Partner.Gender",
+                  "width": 35,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2017",
+                  "type": "StatRow",
+                  "title": "Loc",
+                  "mappedKey": "Partner.Location",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2015",
+                  "type": "StatRow",
+                  "title": "ID",
+                  "mappedKey": "Partner.Identity",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2016",
+                  "type": "StatRow",
+                  "title": "Job",
+                  "mappedKey": "Partner.Occupation",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2014",
+                  "type": "StatRow",
+                  "title": "Race",
+                  "mappedKey": "Partner.Race",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2018",
+                  "type": "StatRow",
+                  "title": "Height",
+                  "mappedKey": "Partner.Height",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2019",
+                  "type": "StatRow",
+                  "title": "Cup",
+                  "mappedKey": "Partner.Cup_Size",
+                  "width": 20,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2020",
+                  "type": "StatRow",
+                  "title": "Size",
+                  "mappedKey": "Partner.Body_Measurements",
+                  "width": 30,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2105",
+                  "type": "StatRow",
+                  "title": "Thoughts",
+                  "mappedKey": "Partner.Thoughts",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2022",
+                  "type": "Checkbox",
+                  "title": "Present",
+                  "mappedKey": "Partner.Is_present",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2023",
+                  "type": "Checkbox",
+                  "title": "In Conflict",
+                  "mappedKey": "Partner.ConflictActive",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2042",
+                  "type": "StatBar",
+                  "title": "Energy",
+                  "mappedKey": "Partner.Energy",
+                  "width": 33,
+                  "sourceType": "variable",
+                  "maxMappedKey": "Partner.Base100",
+                  "barColor": "yellow"
+                },
+                {
+                  "id": "crd-2033",
+                  "type": "StatBar",
+                  "title": "Bonds",
+                  "mappedKey": "Partner.Bonds",
+                  "width": 33,
+                  "sourceType": "variable",
+                  "maxMappedKey": "Partner.Base400",
+                  "barColor": "blue"
+                },
+                {
+                  "id": "crd-2043",
+                  "type": "StatBar",
+                  "title": "Stress",
+                  "mappedKey": "Partner.Stress",
+                  "width": 33,
+                  "sourceType": "variable",
+                  "maxMappedKey": "Partner.Base100",
+                  "barColor": "red"
+                },
+                {
+                  "id": "crd-2052",
+                  "type": "StatBar",
+                  "title": "Arousal",
+                  "mappedKey": "Partner.Arousal",
+                  "width": 33,
+                  "sourceType": "variable",
+                  "maxMappedKey": "Partner.Base100",
+                  "barColor": "pink"
+                },
+                {
+                  "id": "crd-2044",
+                  "type": "StatBar",
+                  "title": "Embarrass",
+                  "mappedKey": "Partner.Embarrassment",
+                  "width": 33,
+                  "sourceType": "variable",
+                  "maxMappedKey": "Partner.Base100",
+                  "barColor": "purple"
+                },
+                {
+                  "id": "crd-2045",
+                  "type": "StatBar",
+                  "title": "Excite",
+                  "mappedKey": "Partner.Excitement",
+                  "width": 33,
+                  "sourceType": "variable",
+                  "maxMappedKey": "Partner.Base100",
+                  "barColor": "darkgreen"
+                },
+                {
+                  "id": "crd-2060",
+                  "type": "RichText",
+                  "title": "Personality Traits",
+                  "mappedKey": "",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2061",
+                  "type": "StatRow",
+                  "title": "Dom",
+                  "mappedKey": "Partner.Dominance",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2062",
+                  "type": "StatRow",
+                  "title": "Shy",
+                  "mappedKey": "Partner.Shyness",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2063",
+                  "type": "StatRow",
+                  "title": "Play",
+                  "mappedKey": "Partner.Playfulness",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2064",
+                  "type": "StatRow",
+                  "title": "Kind",
+                  "mappedKey": "Partner.Kindness",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2065",
+                  "type": "StatRow",
+                  "title": "Patience",
+                  "mappedKey": "Partner.Patience",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2066",
+                  "type": "StatRow",
+                  "title": "Conf",
+                  "mappedKey": "Partner.Confidence",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2067",
+                  "type": "StatRow",
+                  "title": "EmotStab",
+                  "mappedKey": "Partner.EmotionalStability",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2068",
+                  "type": "StatRow",
+                  "title": "Impul",
+                  "mappedKey": "Partner.Impulsive",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2030",
+                  "type": "RichText",
+                  "title": "Relationship",
+                  "mappedKey": "",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2031",
+                  "type": "StatRow",
+                  "title": "Stage",
+                  "mappedKey": "Partner.RelationshipStage",
+                  "width": 33,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2032",
+                  "type": "StatRow",
+                  "title": "Affection",
+                  "mappedKey": "Partner.Affection",
+                  "width": 33,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2034",
+                  "type": "StatRow",
+                  "title": "Trust",
+                  "mappedKey": "Partner.Trust",
+                  "width": 33,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2035",
+                  "type": "StatRow",
+                  "title": "Respect",
+                  "mappedKey": "Partner.Respect",
+                  "width": 33,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2036",
+                  "type": "StatRow",
+                  "title": "Attract",
+                  "mappedKey": "Partner.Attraction",
+                  "width": 33,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2037",
+                  "type": "StatRow",
+                  "title": "Comfort",
+                  "mappedKey": "Partner.Comfort",
+                  "width": 33,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2040",
+                  "type": "RichText",
+                  "title": "State & Pulse",
+                  "mappedKey": "",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2041",
+                  "type": "StatRow",
+                  "title": "Mood",
+                  "mappedKey": "Partner.Mood",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2046",
+                  "type": "StatRow",
+                  "title": "Jealousy",
+                  "mappedKey": "Partner.Jealousy",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2047",
+                  "type": "StatRow",
+                  "title": "Guilt",
+                  "mappedKey": "Partner.Guilt",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2048",
+                  "type": "StatRow",
+                  "title": "Depress",
+                  "mappedKey": "Partner.Depression",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2050",
+                  "type": "RichText",
+                  "title": "Intimacy",
+                  "mappedKey": "",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2051",
+                  "type": "StatRow",
+                  "title": "Desire",
+                  "mappedKey": "Partner.Desire",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2053",
+                  "type": "StatRow",
+                  "title": "Openness",
+                  "mappedKey": "Partner.Openness",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2070",
+                  "type": "RichText",
+                  "title": "Sexual Preferences",
+                  "mappedKey": "",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2071",
+                  "type": "StatRow",
+                  "title": "Initiative",
+                  "mappedKey": "Partner.Initiative",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2072",
+                  "type": "StatRow",
+                  "title": "Intensity",
+                  "mappedKey": "Partner.IntensityPreference",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2073",
+                  "type": "StatRow",
+                  "title": "Control",
+                  "mappedKey": "Partner.ControlPreference",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2074",
+                  "type": "StatRow",
+                  "title": "Curiosity",
+                  "mappedKey": "Partner.Curiosity",
+                  "width": 25,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2075",
+                  "type": "StatRow",
+                  "title": "Lewdness",
+                  "mappedKey": "Partner.Lewdness",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2076",
+                  "type": "StatRow",
+                  "title": "Sex_count",
+                  "mappedKey": "Partner.Sex_count",
+                  "width": 50,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2084",
+                  "type": "StatRow",
+                  "title": "Flirting Style",
+                  "mappedKey": "Partner.FlirtingStyle",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2085",
+                  "type": "StatRow",
+                  "title": "Boundaries",
+                  "mappedKey": "Partner.Boundaries",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2080",
+                  "type": "RichText",
+                  "title": "Finance",
+                  "mappedKey": "",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "customLogic": "_output = 'Finance';"
+                },
+                {
+                  "id": "crd-2081",
+                  "type": "StatRow",
+                  "title": "Money",
+                  "mappedKey": "Partner.Money",
+                  "width": 50,
+                  "sourceType": "variable",
+                  "customLogic": "_output = `Ɉ ${getV(stat, 'Money', 'Default')}`;"
+                },
+                {
+                  "id": "crd-2082",
+                  "type": "StatRow",
+                  "title": "Salary",
+                  "mappedKey": "Partner.Salary",
+                  "width": 50,
+                  "sourceType": "variable",
+                  "customLogic": "_output = `Ɉ ${getV(stat, 'Salary', 'Default')}`;"
+                },
+                {
+                  "id": "crd-2100",
+                  "type": "RichText",
+                  "title": "Biography",
+                  "mappedKey": "",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2101",
+                  "type": "StatRow",
+                  "title": "Personality",
+                  "mappedKey": "Partner.Personality",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2102",
+                  "type": "StatRow",
+                  "title": "Physical",
+                  "mappedKey": "Partner.Physical_Features",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2021",
+                  "type": "StatRow",
+                  "title": "Hair",
+                  "mappedKey": "Partner.Hair_Style",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2103",
+                  "type": "StatRow",
+                  "title": "Bio",
+                  "mappedKey": "Partner.Biography",
+                  "width": 100,
+                  "sourceType": "variable"
+                },
+                {
+                  "id": "crd-2104",
+                  "type": "StatRow",
+                  "title": "Secret",
+                  "mappedKey": "Partner.Secret",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "customLogic": "_output = (Number(getV(stat, 'Trust', 0)) > 90 && Number(getV(stat, 'Respect', 0)) > 50 && Number(getV(stat, 'Comfort', 0)) > 30) ? getV(stat, 'Secret', '') : 'Require: Trust > 90, Respect > 50, Comfort > 30';"
+                },
+                {
+                  "id": "crd-1776349285027",
+                  "type": "RichText",
+                  "title": "Events & Relationship",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "mappedKey": "",
+                  "customLogic": "_output = 'Events & Relationship';"
+                },
+                {
+                  "id": "crd-1776349320622",
+                  "type": "GridContainer",
+                  "title": "",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "layoutMode": "list",
+                  "mappedKey": "",
+                  "cards": [
+                    {
+                      "id": "crd-1776349357171",
+                      "type": "QuestList",
+                      "title": "Good Memories",
+                      "width": 100,
+                      "sourceType": "variable",
+                      "mappedKey": "Partner.PositiveMemories",
+                      "collapsed": true
+                    },
+                    {
+                      "id": "crd-1776349384935",
+                      "type": "QuestList",
+                      "title": "Bad Memories",
+                      "width": 100,
+                      "sourceType": "variable",
+                      "mappedKey": "Partner.NegativeMemories",
+                      "collapsed": true
+                    },
+                    {
+                      "id": "crd-1776349397845",
+                      "type": "QuestList",
+                      "title": "Important Events",
+                      "width": 100,
+                      "sourceType": "variable",
+                      "mappedKey": "Partner.ImportantEvents",
+                      "collapsed": true
+                    },
+                    {
+                      "id": "crd-1776349417676",
+                      "type": "QuestList",
+                      "title": "Friends",
+                      "width": 100,
+                      "sourceType": "variable",
+                      "mappedKey": "Partner.Friends",
+                      "collapsed": true
+                    }
+                  ]
+                },
+                {
+                  "id": "crd-1776353048021",
+                  "type": "QuestList",
+                  "title": "Belongings",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "mappedKey": "Partner.Belongings",
+                  "customLogic": "_output = 'Belongings';",
+                  "collapsed": true
+                }
+              ]
+            }
+          ],
+          "showQuickJump": true,
+          "pageSize": 1
+        }
+      ],
+      "containerWidth": 60,
+      "containerWidthUnit": "%"
+    },
+    {
+      "id": "tab-3",
+      "name": "Items",
+      "blocks": [
+        {
+          "id": "blk-301",
+          "title": "Belongings",
+          "width": 100,
+          "mappedKey": "Mainchar",
+          "cards": [
+            {
+              "id": "crd-3001",
+              "type": "QuestList",
+              "title": "",
+              "width": 100,
+              "mappedKey": "Mainchar.Belongings",
+              "sourceType": "variable",
+              "layoutMode": "equipment-action"
+            }
+          ]
+        },
+        {
+          "id": "blk-302",
+          "title": "Inventory",
+          "width": 100,
+          "mappedKey": "Mainchar",
+          "cards": [
+            {
+              "id": "crd-3002",
+              "type": "QuestList",
+              "title": "",
+              "width": 100,
+              "mappedKey": "Mainchar.Inventory",
+              "sourceType": "variable",
+              "layoutMode": "inventory",
+              "listType": "inventory"
+            }
+          ]
+        }
+      ],
+      "containerWidth": 60,
+      "containerWidthUnit": "%"
+    },
+    {
+      "id": "tab-1776376522210",
+      "name": "World",
+      "containerWidth": 50,
+      "containerWidthUnit": "%",
+      "blocks": [
+        {
+          "id": "blk-1776376530246",
+          "title": "World Events",
+          "width": 100,
+          "layoutMode": "list",
+          "cards": [
+            {
+              "id": "crd-1776376530246",
+              "type": "GridContainer",
+              "title": "",
+              "width": 100,
+              "layoutMode": "list",
+              "sourceType": "variable",
+              "mappedKey": "",
+              "cards": [
+                {
+                  "id": "crd-1776376533730",
+                  "type": "QuestList",
+                  "title": "Location",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "mappedKey": "World_Calc.Locations",
+                  "collapsed": true,
+                  "allowEdit": true
+                },
+                {
+                  "id": "crd-1776376579620",
+                  "type": "QuestList",
+                  "title": "Events",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "mappedKey": "World_Calc.Events",
+                  "collapsed": true,
+                  "allowEdit": true
+                },
+                {
+                  "id": "crd-1776376604351",
+                  "type": "QuestList",
+                  "title": "NPC",
+                  "width": 100,
+                  "sourceType": "variable",
+                  "mappedKey": "World_Calc.NPCs",
+                  "collapsed": true,
+                  "allowEdit": true
+                }
+              ]
+            }
+          ],
+          "mappedKey": "World_Calc"
+        }
+      ]
+    }
+  ],
+  "mvuData": "{\n  \"World_Calc\": {\n    \"Locations\": {\n      \"Cafe_Luna\": {\n        \"summary\": \"Cozy café near the station. Known for matcha lattes and quiet booths.\"\n      }\n    },\n    \"Events\": {\n      \"Cherry_Blossom_Festival\": {\n        \"summary\": \"Annual spring festival at Riverside Park. Food stalls, lanterns, live music.\",\n        \"state\": \"upcoming\",\n        \"time\": \"2025-04-05\"\n      }\n    },\n    \"NPCs\": {\n      \"Tanaka\": {\n        \"name\": \"Tanaka Hiroshi\",\n        \"relationship\": \"coworker\",\n        \"occupation\": \"Accountant\",\n        \"personality\": \"talkative, fishing enthusiast\",\n        \"last_seen\": \"2025-04-01 12:30\",\n        \"summary\": \"Met at company mixer. Same lunch hour. Talked about weekend fishing trips.\"\n      }\n    }\n  },\n  \"World\": {\n    \"Date\": [\n      \"April 1, 2025\",\n      \"Date\"\n    ],\n    \"Time\": [\n      \"18:30\",\n      \"Time\"\n    ],\n    \"Location\": [\n      \"Cafe Luna\",\n      \"Location\"\n    ],\n    \"Weather\": [\n      \"Partly Cloudy\",\n      \"Weather\"\n    ]\n  },\n  \"Mainchar\": {\n    \"Name\": [\n      \"{{user}}\",\n      \"Name\"\n    ],\n    \"Age\": [\n      \"24\",\n      \"Age\"\n    ],\n    \"Gender\": [\n      \"Male\",\n      \"Gender\"\n    ],\n    \"Image\": [\n      \"\",\n      \"Portrait\"\n    ],\n    \"Race\": [\n      \"Human\",\n      \"Race\"\n    ],\n    \"Occupation\": [\n      \"Software Engineer\",\n      \"Occupation\"\n    ],\n    \"Mental_state\": [\n      \"Relaxed\",\n      \"Mental State\"\n    ],\n    \"Charisma\": [\n      62,\n      \"Charisma\"\n    ],\n    \"SocialEnergy\": [\n      75,\n      \"Social Energy\"\n    ],\n    \"Money\": [\n      180000,\n      \"Ɉ Money\"\n    ],\n    \"Salary\": [\n      180000,\n      \"Ɉ Money\"\n    ],\n    \"Quests\": {\n      \"Find_a_Birthday_Gift\": {\n        \"Desc\": \"Hana's birthday is coming up. Find something she'd actually like.\",\n        \"Reward\": \"Affection boost + ImportantEvents entry\",\n        \"Status\": \"active\",\n        \"LastUpdated\": \"2025-03-28\",\n        \"Difficulty\": \"B\"\n      }\n    },\n    \"Skills\": {\n      \"Cooking\": {\n        \"Desc\": \"Home cooking — can make decent Japanese comfort food. Impresses dates.\"\n      }\n    },\n    \"Belongings\": {\n      \"Silver Watch\": {\n        \"Type\": \"Accessory\",\n        \"Qty\": 1,\n        \"Desc\": \"A simple silver wristwatch. Dad gave it as a college graduation gift.\"\n      },\n      \"Leather Messenger Bag\": {\n        \"Type\": \"Bag\",\n        \"Qty\": 1,\n        \"Desc\": \"Dark brown leather messenger bag for work. Holds laptop and lunch.\"\n      }\n    },\n    \"Inventory\": {\n      \"Matcha Kit Kat\": {\n        \"Type\": \"Gift\",\n        \"Qty\": 3,\n        \"Desc\": \"Limited edition matcha Kit Kat. Hana mentioned she likes these.\"\n      },\n      \"Umbrella\": {\n        \"Type\": \"Misc\",\n        \"Qty\": 1,\n        \"Desc\": \"Compact folding umbrella. Clear with blue trim.\"\n      }\n    },\n    \"Stress_Curr\": [\n      15,\n      \"Stress\"\n    ],\n    \"Energy_curr\": [\n      80,\n      \"Energy\"\n    ],\n    \"Energy_max\": [\n      100,\n      \"Energy\"\n    ],\n    \"Stress_max\": [\n      100,\n      \"Stress\"\n    ]\n  },\n  \"Partner\": {\n    \"Hana\": {\n      \"Name\": [\n        \"Sakurai Hana\",\n        \"Name\"\n      ],\n      \"Age\": [\n        \"23\",\n        \"Age\"\n      ],\n      \"Gender\": [\n        \"Female\",\n        \"Gender\"\n      ],\n      \"Race\": [\n        \"Human\",\n        \"Race\"\n      ],\n      \"Identity\": [\n        \"University Graduate\",\n        \"Identity\"\n      ],\n      \"Occupation\": [\n        \"Graphic Designer\",\n        \"Occupation\"\n      ],\n      \"Location\": [\n        \"Cafe Luna\",\n        \"Location\"\n      ],\n      \"Height\": [\n        \"162cm\",\n        \"Height\"\n      ],\n      \"Cup_Size\": [\n        \"C\",\n        \"Cup Size\"\n      ],\n      \"Body_Measurements\": [\n        \"84-60-86\",\n        \"Measurements\"\n      ],\n      \"Hair_Style\": [\n        \"Shoulder-length dark brown with side-swept bangs\",\n        \"Hairstyle\"\n      ],\n      \"Physical_Features\": [\n        \"Small mole under left eye, dimples when smiling\",\n        \"Physical Traits\"\n      ],\n      \"Personality\": [\n        \"Tsundere-Lite\",\n        \"Personality\"\n      ],\n      \"Biography\": [\n        \"A freelance graphic designer who quit her agency job last year to go independent. Grew up in Yokohama, moved to Tokyo for college and stayed. Has a cat named Mochi. Acts tough but gets flustered by sincere compliments.\",\n        \"Biography\"\n      ],\n      \"Secret\": [\n        \"She left her agency because her senior stole credit for her designs. Still carries resentment and trust issues around authority figures.\",\n        \"Secret\"\n      ],\n      \"Image\": [\n        \"\",\n        \"Avatar\"\n      ],\n      \"Affection\": [\n        35,\n        \"Affection\"\n      ],\n      \"Trust\": [\n        20,\n        \"Trust\"\n      ],\n      \"Respect\": [\n        30,\n        \"Respect\"\n      ],\n      \"Attraction\": [\n        45,\n        \"Attraction\"\n      ],\n      \"Comfort\": [\n        25,\n        \"Comfort\"\n      ],\n      \"Bonds\": [\n        30,\n        \"Bonds\"\n      ],\n      \"Energy\": [\n        70,\n        \"Energy\"\n      ],\n      \"Desire\": [\n        15,\n        \"Desire\"\n      ],\n      \"Arousal\": [\n        5,\n        \"Arousal\"\n      ],\n      \"Openness\": [\n        20,\n        \"Openness\"\n      ],\n      \"Dominance\": [\n        10,\n        \"Dominance\"\n      ],\n      \"Shyness\": [\n        55,\n        \"Shyness\"\n      ],\n      \"Playfulness\": [\n        65,\n        \"Playfulness\"\n      ],\n      \"Kindness\": [\n        60,\n        \"Kindness\"\n      ],\n      \"Patience\": [\n        40,\n        \"Patience\"\n      ],\n      \"Confidence\": [\n        45,\n        \"Confidence\"\n      ],\n      \"EmotionalStability\": [\n        50,\n        \"Emotional Stability\"\n      ],\n      \"Impulsive\": [\n        55,\n        \"Impulsive\"\n      ],\n      \"Jealousy\": [\n        10,\n        \"Jealousy\"\n      ],\n      \"Guilt\": [\n        0,\n        \"Guilt\"\n      ],\n      \"Depression\": [\n        5,\n        \"Depression\"\n      ],\n      \"Initiative\": [\n        30,\n        \"Initiative\"\n      ],\n      \"IntensityPreference\": [\n        40,\n        \"Intensity\"\n      ],\n      \"ControlPreference\": [\n        -20,\n        \"Control Pref\"\n      ],\n      \"Curiosity\": [\n        60,\n        \"Curiosity\"\n      ],\n      \"Mood\": [\n        \"Content\",\n        \"Mood\"\n      ],\n      \"Stress\": [\n        20,\n        \"Stress\"\n      ],\n      \"Embarrassment\": [\n        10,\n        \"Embarrassment\"\n      ],\n      \"Excitement\": [\n        25,\n        \"Excitement\"\n      ],\n      \"RelationshipStage\": [\n        \"Friend\",\n        \"Stage\"\n      ],\n      \"ConflictActive\": [\n        false,\n        \"Conflict Active\"\n      ],\n      \"Is_present\": [\n        true,\n        \"Present\"\n      ],\n      \"PositiveMemories\": {\n        \"First_Coffee\": {\n          \"Desc\": \"{{user}} bought her a matcha latte without asking — she was surprised he remembered her order.\",\n          \"TimeStamp\": \"2025-03-15\"\n        }\n      },\n      \"NegativeMemories\": {\n        \"Second\": {\n          \"Desc\": \"{{user}} bought her a matcha latte without asking — she was surprised he remembered her order.\",\n          \"TimeStamp\": \"2025-03-15\"\n        }\n      },\n      \"ImportantEvents\": {\n        \"Met_at_Bookstore\": {\n          \"Desc\": \"First meeting at Tsutaya bookstore. Both reached for the same design book. Awkward, then funny.\",\n          \"TimeStamp\": \"2025-02-20\"\n        }\n      },\n      \"Friends\": {\n        \"Tanaka\": {\n          \"Name\": \"Takana\",\n          \"FriendshipScore\": \"70\",\n          \"Mood\": \"Happy with her\"\n        }\n      },\n      \"Hobbies\": {\n        \"Second\": {\n          \"Desc\": \"{{user}} bought her a matcha latte without asking — she was surprised he remembered her order.\"\n        }\n      },\n      \"Values\": {\n        \"Second\": {\n          \"Desc\": \"{{user}} bought her a matcha latte without asking — she was surprised he remembered her order.\"\n        }\n      },\n      \"Money\": [\n        120000,\n        \"Ɉ Money\"\n      ],\n      \"Salary\": [\n        120000,\n        \"Ɉ Money\"\n      ],\n      \"FlirtingStyle\": [\n        \"Dislikes being touched suddenly without warning. Needs verbal check-in for anything beyond casual contact.\",\n        \"FlirtingStyle\"\n      ],\n      \"Boundaries\": [\n        \"Dislikes being touched suddenly without warning. Needs verbal check-in for anything beyond casual contact.\",\n        \"Boundaries\"\n      ],\n      \"Lewdness\": [\n        0,\n        \"Lewdness\"\n      ],\n      \"Sex_count\": [\n        0,\n        \"Sex Count\"\n      ],\n      \"Thoughts\": [\n        \"He remembered my order... that's kind of sweet.\",\n        \"Thoughts\"\n      ],\n      \"Belongings\": {\n        \"Sketchbook\": {\n          \"Type\": \"Personal\",\n          \"Qty\": 1,\n          \"Desc\": \"A5 Moleskine sketchbook she carries everywhere. Half-filled with character designs.\"\n        },\n        \"Cat Ear Headband\": {\n          \"Type\": \"Accessory\",\n          \"Qty\": 1,\n          \"Desc\": \"Black velvet cat ear headband. Wears it at home when relaxing. Would die if {{user}} saw it.\"\n        }\n      },\n      \"Base100\": [\n        100,\n        \"Base100\"\n      ],\n      \"Base400\": [\n        400,\n        \"Base400\"\n      ],\n      \"TimeSinceLastSeen\": [\n        \"2025-04-10\",\n        \"TimeSinceLastSeen\"\n      ]\n    }\n  },\n  \"MVUStatMenu_DB_Ver\": \"1.0\",\n  \"GameStarted\": false\n}",
+  "selectedPaths": [
+    ".GameStarted",
+    ".MVUStatMenu_DB_Ver",
+    ".Mainchar",
+    ".Mainchar.Age",
+    ".Mainchar.Age.0",
+    ".Mainchar.Belongings",
+    ".Mainchar.Belongings.Leather Messenger Bag",
+    ".Mainchar.Belongings.Leather Messenger Bag.Desc",
+    ".Mainchar.Belongings.Leather Messenger Bag.Qty",
+    ".Mainchar.Belongings.Leather Messenger Bag.Type",
+    ".Mainchar.Belongings.Silver Watch",
+    ".Mainchar.Belongings.Silver Watch.Desc",
+    ".Mainchar.Belongings.Silver Watch.Qty",
+    ".Mainchar.Belongings.Silver Watch.Type",
+    ".Mainchar.Charisma",
+    ".Mainchar.Charisma.0",
+    ".Mainchar.Gender",
+    ".Mainchar.Gender.0",
+    ".Mainchar.Image",
+    ".Mainchar.Image.0",
+    ".Mainchar.Inventory",
+    ".Mainchar.Inventory.Matcha Kit Kat",
+    ".Mainchar.Inventory.Matcha Kit Kat.Desc",
+    ".Mainchar.Inventory.Matcha Kit Kat.Qty",
+    ".Mainchar.Inventory.Matcha Kit Kat.Type",
+    ".Mainchar.Inventory.Umbrella.Desc",
+    ".Mainchar.Inventory.Umbrella.Qty",
+    ".Mainchar.Inventory.Umbrella.Type",
+    ".Mainchar.Mental_state",
+    ".Mainchar.Mental_state.0",
+    ".Mainchar.Money",
+    ".Mainchar.Money.0",
+    ".Mainchar.Name",
+    ".Mainchar.Name.0",
+    ".Mainchar.Occupation",
+    ".Mainchar.Occupation.0",
+    ".Mainchar.Quests",
+    ".Mainchar.Quests.Find_a_Birthday_Gift",
+    ".Mainchar.Quests.Find_a_Birthday_Gift.Desc",
+    ".Mainchar.Quests.Find_a_Birthday_Gift.LastUpdated",
+    ".Mainchar.Quests.Find_a_Birthday_Gift.Reward",
+    ".Mainchar.Quests.Find_a_Birthday_Gift.Status",
+    ".Mainchar.Race",
+    ".Mainchar.Race.0",
+    ".Mainchar.Salary",
+    ".Mainchar.Skills",
+    ".Mainchar.Skills.Cooking",
+    ".Mainchar.Skills.Cooking.Desc",
+    ".Mainchar.SocialEnergy",
+    ".Mainchar.SocialEnergy.0",
+    ".Partner",
+    ".Partner.Hana",
+    ".Partner.Hana.Affection",
+    ".Partner.Hana.Affection.0",
+    ".Partner.Hana.Age",
+    ".Partner.Hana.Age.0",
+    ".Partner.Hana.Arousal",
+    ".Partner.Hana.Arousal.0",
+    ".Partner.Hana.Attraction",
+    ".Partner.Hana.Attraction.0",
+    ".Partner.Hana.Belongings",
+    ".Partner.Hana.Belongings.Cat Ear Headband.Desc",
+    ".Partner.Hana.Belongings.Cat Ear Headband.Qty",
+    ".Partner.Hana.Belongings.Cat Ear Headband.Type",
+    ".Partner.Hana.Belongings.Sketchbook",
+    ".Partner.Hana.Belongings.Sketchbook.Desc",
+    ".Partner.Hana.Belongings.Sketchbook.Qty",
+    ".Partner.Hana.Belongings.Sketchbook.Type",
+    ".Partner.Hana.Biography",
+    ".Partner.Hana.Biography.0",
+    ".Partner.Hana.Body_Measurements",
+    ".Partner.Hana.Body_Measurements.0",
+    ".Partner.Hana.Bonds",
+    ".Partner.Hana.Bonds.0",
+    ".Partner.Hana.Boundaries",
+    ".Partner.Hana.Boundaries.0",
+    ".Partner.Hana.Comfort",
+    ".Partner.Hana.Comfort.0",
+    ".Partner.Hana.Confidence",
+    ".Partner.Hana.Confidence.0",
+    ".Partner.Hana.ConflictActive",
+    ".Partner.Hana.ConflictActive.0",
+    ".Partner.Hana.ControlPreference",
+    ".Partner.Hana.ControlPreference.0",
+    ".Partner.Hana.Cup_Size",
+    ".Partner.Hana.Cup_Size.0",
+    ".Partner.Hana.Curiosity",
+    ".Partner.Hana.Curiosity.0",
+    ".Partner.Hana.Depression",
+    ".Partner.Hana.Depression.0",
+    ".Partner.Hana.Desire",
+    ".Partner.Hana.Desire.0",
+    ".Partner.Hana.Dominance",
+    ".Partner.Hana.Dominance.0",
+    ".Partner.Hana.Embarrassment",
+    ".Partner.Hana.Embarrassment.0",
+    ".Partner.Hana.EmotionalStability",
+    ".Partner.Hana.EmotionalStability.0",
+    ".Partner.Hana.Energy",
+    ".Partner.Hana.Energy.0",
+    ".Partner.Hana.Excitement",
+    ".Partner.Hana.Excitement.0",
+    ".Partner.Hana.FlirtingStyle",
+    ".Partner.Hana.FlirtingStyle.0",
+    ".Partner.Hana.Friends",
+    ".Partner.Hana.Friends.Tanaka",
+    ".Partner.Hana.Friends.Tanaka.FriendshipScore",
+    ".Partner.Hana.Friends.Tanaka.Mood",
+    ".Partner.Hana.Friends.Tanaka.Name",
+    ".Partner.Hana.Gender",
+    ".Partner.Hana.Gender.0",
+    ".Partner.Hana.Guilt",
+    ".Partner.Hana.Guilt.0",
+    ".Partner.Hana.Hair_Style",
+    ".Partner.Hana.Hair_Style.0",
+    ".Partner.Hana.Height",
+    ".Partner.Hana.Height.0",
+    ".Partner.Hana.Hobbies",
+    ".Partner.Hana.Identity",
+    ".Partner.Hana.Identity.0",
+    ".Partner.Hana.Image",
+    ".Partner.Hana.Image.0",
+    ".Partner.Hana.ImportantEvents",
+    ".Partner.Hana.ImportantEvents.Met_at_Bookstore",
+    ".Partner.Hana.ImportantEvents.Met_at_Bookstore.Desc",
+    ".Partner.Hana.ImportantEvents.Met_at_Bookstore.TimeStamp",
+    ".Partner.Hana.Impulsive",
+    ".Partner.Hana.Impulsive.0",
+    ".Partner.Hana.Initiative",
+    ".Partner.Hana.Initiative.0",
+    ".Partner.Hana.IntensityPreference",
+    ".Partner.Hana.IntensityPreference.0",
+    ".Partner.Hana.Is_present",
+    ".Partner.Hana.Is_present.0",
+    ".Partner.Hana.Jealousy",
+    ".Partner.Hana.Jealousy.0",
+    ".Partner.Hana.Kindness",
+    ".Partner.Hana.Kindness.0",
+    ".Partner.Hana.Lewdness",
+    ".Partner.Hana.Lewdness.0",
+    ".Partner.Hana.Location",
+    ".Partner.Hana.Location.0",
+    ".Partner.Hana.Money",
+    ".Partner.Hana.Money.0",
+    ".Partner.Hana.Mood",
+    ".Partner.Hana.Mood.0",
+    ".Partner.Hana.Name",
+    ".Partner.Hana.Name.0",
+    ".Partner.Hana.NegativeMemories",
+    ".Partner.Hana.Occupation",
+    ".Partner.Hana.Occupation.0",
+    ".Partner.Hana.Openness",
+    ".Partner.Hana.Openness.0",
+    ".Partner.Hana.Patience",
+    ".Partner.Hana.Patience.0",
+    ".Partner.Hana.Personality",
+    ".Partner.Hana.Personality.0",
+    ".Partner.Hana.Physical_Features",
+    ".Partner.Hana.Physical_Features.0",
+    ".Partner.Hana.Playfulness",
+    ".Partner.Hana.Playfulness.0",
+    ".Partner.Hana.PositiveMemories",
+    ".Partner.Hana.PositiveMemories.First_Coffee",
+    ".Partner.Hana.PositiveMemories.First_Coffee.Desc",
+    ".Partner.Hana.PositiveMemories.First_Coffee.TimeStamp",
+    ".Partner.Hana.Race",
+    ".Partner.Hana.Race.0",
+    ".Partner.Hana.RelationshipStage",
+    ".Partner.Hana.RelationshipStage.0",
+    ".Partner.Hana.Respect",
+    ".Partner.Hana.Respect.0",
+    ".Partner.Hana.Salary",
+    ".Partner.Hana.Secret",
+    ".Partner.Hana.Secret.0",
+    ".Partner.Hana.Sex_count",
+    ".Partner.Hana.Sex_count.0",
+    ".Partner.Hana.Shyness",
+    ".Partner.Hana.Shyness.0",
+    ".Partner.Hana.Stress",
+    ".Partner.Hana.Stress.0",
+    ".Partner.Hana.Thoughts",
+    ".Partner.Hana.Thoughts.0",
+    ".Partner.Hana.Trust",
+    ".Partner.Hana.Trust.0",
+    ".Partner.Hana.Values",
+    ".World",
+    ".World.Date",
+    ".World.Date.0",
+    ".World.Location",
+    ".World.Location.0",
+    ".World.Time",
+    ".World.Time.0",
+    ".World.Weather",
+    ".World.Weather.0",
+    ".World_Calc",
+    ".World_Calc.Events",
+    ".World_Calc.Events.Cherry_Blossom_Festival",
+    ".World_Calc.Events.Cherry_Blossom_Festival.state",
+    ".World_Calc.Events.Cherry_Blossom_Festival.summary",
+    ".World_Calc.Events.Cherry_Blossom_Festival.time",
+    ".World_Calc.Locations",
+    ".World_Calc.Locations.Cafe_Luna",
+    ".World_Calc.Locations.Cafe_Luna.summary",
+    ".World_Calc.NPCs",
+    ".World_Calc.NPCs.Tanaka",
+    ".World_Calc.NPCs.Tanaka.last_seen",
+    ".World_Calc.NPCs.Tanaka.name",
+    ".World_Calc.NPCs.Tanaka.occupation",
+    ".World_Calc.NPCs.Tanaka.personality",
+    ".World_Calc.NPCs.Tanaka.relationship",
+    ".World_Calc.NPCs.Tanaka.summary",
+    ".Mainchar.Stress_Curr",
+    ".Mainchar.Energy_curr",
+    ".Mainchar.Energy_max",
+    ".Mainchar.Stress_max",
+    ".Partner.Hana.Base100",
+    ".Partner.Hana.Base400",
+    ".Mainchar.Stress_Curr.0",
+    ".Mainchar.Energy_curr.0",
+    ".Mainchar.Energy_max.0",
+    ".Mainchar.Stress_max.0",
+    ".Partner.Hana.NegativeMemories.Second",
+    ".Partner.Hana.NegativeMemories.Second.Desc",
+    ".Partner.Hana.NegativeMemories.Second.TimeStamp",
+    ".Partner.Hana.Hobbies.Second",
+    ".Partner.Hana.Hobbies.Second.Desc",
+    ".Partner.Hana.Values.Second",
+    ".Partner.Hana.Values.Second.Desc",
+    ".Mainchar.Quests.Find_a_Birthday_Gift.Difficulty",
+    ".Partner.Hana.TimeSinceLastSeen",
+    ".Partner.Hana.TimeSinceLastSeen.0",
+    ".Partner.Hana.Salary.0",
+    ".Mainchar.Salary.0"
+  ],
+  "collectionPaths": [
+    ".Partner",
+    ".Mainchar.Belongings",
+    ".Mainchar.Inventory",
+    ".Mainchar.Quests",
+    ".Mainchar.Skills",
+    ".World_Calc.Locations",
+    ".World_Calc.Events",
+    ".World_Calc.NPCs",
+    ".Partner.Hana.PositiveMemories",
+    ".Partner.Hana.NegativeMemories",
+    ".Partner.Hana.ImportantEvents",
+    ".Partner.Hana.Friends",
+    ".Partner.Hana.Hobbies",
+    ".Partner.Hana.Belongings"
+  ],
+  "lockedPaths": [
+    ".Mainchar.Quests",
+    ".World",
+    ".Partner.Hana.PositiveMemories.First_Coffee",
+    ".Partner.Hana.NegativeMemories.Second",
+    ".Partner.Hana.ImportantEvents.Met_at_Bookstore",
+    ".Partner.Hana.Friends.Tanaka",
+    ".Partner.Hana.Hobbies.Second",
+    ".Partner.Hana.Values.Second",
+    ".Partner.Hana.FlirtingStyle.Second",
+    ".Mainchar",
+    ".Partner"
+  ],
+  "lockTopLevel": true,
+  "customTemplates": [],
+  "globalCss": "\n    :root {\n        --text-primary: #f0e6ff;\n        --text-secondary: #d4a8ff;\n        --accent-primary: #c840ff;\n        --border-color: rgba(200, 64, 255, 0.3);\n        --background-card: rgba(30, 0, 50, 0.65);\n    }\n    /* mvu-row-sync-v4 */\n    * { box-sizing: border-box; }\n    /* Gradient Animation */\n    @keyframes gradient-flow {\n        0% { background-position: 0% 50%; }\n        50% { background-position: 100% 50%; }\n        100% { background-position: 0% 50%; }\n    }\n\n    body {\n        font-family: 'Segoe UI', sans-serif;\n        background: transparent;\n        color: var(--text-primary);\n        margin: 0; padding: 10px;\n        font-size: 16px;\n    }\n\n    .status-container, .status-card {\n        display: flex; flex-direction: column;\n        background: linear-gradient(-45deg, #2a0060, #6a0dad, #b06abf, #d4a0c8);\n        background-size: 400% 400%;\n        animation: gradient-flow 30s ease infinite;\n        border: 1px solid var(--border-color);\n        border-radius: 8px;\n        min-height: 500px;\n        overflow: hidden;\n        max-width: 100%;\n        box-sizing: border-box;\n        transition: width 0.3s;\n        margin: 0 auto;\n    }\n\n    /* .tab-nav is the canonical tab container. PreviewRenderer uses it too (was .preview-tabs). */\n    .tab-nav {\n        display: flex;\n        background: rgba(0,0,0,0.3);\n        border-bottom: 1px solid var(--border-color);\n        overflow-x: auto;\n    }\n    .tab-btn {\n        padding: 12px 20px; color: var(--text-secondary); cursor: pointer;\n        border-bottom: 2px solid transparent; user-select: none;\n    }\n    .tab-btn.active {\n        color: var(--accent-primary); border-bottom-color: var(--accent-primary);\n    }\n    /* Builder Preview tab buttons — display-only (cursor: default, no click handler) */\n    .p-tab-btn {\n        padding: 12px 20px;\n        color: var(--text-secondary);\n        cursor: default;\n        border-bottom: 2px solid transparent;\n        user-select: none;\n    }\n    .p-tab-btn.active {\n        color: var(--accent-primary);\n        border-bottom: 2px solid var(--accent-primary);\n    }\n\n    /* Pagination — shared flex layout */\n    .pagination-controls,\n    .pagination-controls-sm {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n    }\n    /* Large pagination (PreviewRenderer top-level list pager) */\n    .pagination-controls {\n        gap: 15px;\n        margin-top: 15px;\n        padding-top: 10px;\n        border-top: 1px solid var(--border-color);\n    }\n    .pager-btn {\n        background: transparent;\n        border: 1px solid var(--accent-primary);\n        color: var(--accent-primary);\n        width: 30px;\n        height: 30px;\n        border-radius: 4px;\n        cursor: pointer;\n        font-weight: bold;\n    }\n    .pager-btn:disabled {\n        border-color: #555;\n        color: #555;\n        cursor: not-allowed;\n    }\n    .pager-btn:hover:not(:disabled) {\n        background: rgba(200, 64, 255, 0.2);\n    }\n    .page-info {\n        font-size: 0.9em;\n        color: #aaa;\n    }\n    .tab-content { display: none; padding: 10px; height: 100%; overflow-y: auto; }\n    .tab-content.active { display: block; }\n\n    .grid-row { display: flex; flex-wrap: wrap; margin: 0 -5px; align-items: stretch; align-content: flex-start; max-width: 100%; }\n    .responsive-stats-grid {\n        display: grid;\n        grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));\n        gap: 2px;\n        width: 100%;\n    }\n    /* When .grid-row and .responsive-stats-grid are used together, flex wins via specificity (0,2,0 > 0,1,0).\n       This replaces the old duplicate .grid-row rule that was previously used as a cascade anchor. */\n    .grid-row.responsive-stats-grid { display: flex; flex-wrap: wrap; margin: 0 -5px; align-items: stretch; align-content: flex-start; }\n    .grid-full-width {\n        grid-column: 1 / -1;\n    }\n    \n    /* Responsive Grid Layout Adjustments */\n    .responsive-stats-grid .checkbox-display {\n        justify-content: flex-start;\n    }\n    .col-wrapper { padding: 5px; box-sizing: border-box; min-width: 0; max-width: 100%; overflow: hidden; }\n    .info-card {\n        background: var(--background-card);\n        border: 1px solid var(--border-color);\n        border-radius: 6px;\n        padding: 8px;\n        height: 100%;\n    }\n    .card-header {\n        color: #ffffff; font-weight: bold;\n        border-bottom: 1px solid var(--border-color);\n        padding-bottom: 3px; margin-bottom: 4px;\n    }\n\n    .prop-list {\n        display: flex;\n        flex-wrap: wrap;\n        margin: 0 -4px;\n        width: 100%;\n    }\n    .prop-row-wrapper { \n        padding: 1px 4px; \n        box-sizing: border-box; \n        min-width: 55px;\n        flex: 1 0 auto;\n    }\n    .prop-row {\n        display: flex;\n        flex-wrap: wrap;\n        align-items: center;\n        border-bottom: 1px dashed rgba(255,255,255,0.1);\n        padding: 2px 0; margin: 0;\n        line-height: 1.2;\n        font-size: 0.875em;\n        min-width: 0;\n        gap: 4px;\n    }\n    .prop-label {\n        color: #d4a8ff;\n        flex: 0 0 auto;\n        max-width: 100%;\n        margin-right: 4px;\n        margin-bottom: 1px;\n        padding-top: 2px;\n        white-space: nowrap !important;\n        overflow: visible !important;\n        text-overflow: clip !important;\n    }\n    .prop-val-container {\n        flex: 1 1 auto;\n        width: auto;\n        display: flex;\n        justify-content: flex-end;\n        align-items: center;\n        min-width: 0;\n    }\n    .prop-val {\n        font-weight: 400;\n        width: auto;\n        max-width: 100%;\n        min-width: 0;\n        overflow-wrap: break-word;\n        word-break: normal;\n    }\n    .checkbox-display {\n        width: 100%;\n        display: flex;\n        justify-content: flex-start;\n    }\n\n    /* List content fallback (works even where :has is unsupported) */\n    .prop-val ul,\n    .prop-val ol {\n        margin: 0;\n        padding-left: 1.2em;\n        text-align: left;\n        line-height: 1.35;\n        list-style-position: outside;\n        list-style-type: disc;\n    }\n    .prop-val ol { list-style-type: decimal; }\n    .prop-val li { margin-bottom: 4px; }\n    .prop-val li:last-child { margin-bottom: 0; }\n    .hidden { display: none !important; }\n\n    /* Stat Bars */\n    .stat-bar-box,\n    .stat-bar-card {\n        margin-bottom: 4px; padding: 4px;\n        background: rgba(0,0,0,0.2); border-radius: 6px;\n        border: 1px solid rgba(255,255,255,0.05);\n    }\n    .stat-bar-header {\n        display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 0.9em;\n    }\n    .stat-bar-label { font-weight: bold; color: #fff; }\n    .stat-bar-val { font-family: monospace; color: #ccc; }\n    \n    .stat-bar-track {\n        width: 100%;\n        height: 8px;\n        background: rgba(0,0,0,0.5);\n        border-radius: 4px;\n        overflow: hidden;\n    }\n    .stat-bar-fill {\n        height: 100%;\n        border-radius: 4px;\n        transition: width 0.3s ease;\n    }\n    /* Bar Colors with Gradients */\n    .bar-red { background: linear-gradient(90deg, #ff5252, #ff8a80); box-shadow: 0 0 5px rgba(255,82,82,0.5); }\n    .bar-green { background: linear-gradient(90deg, #50fa7b, #69f0ae); box-shadow: 0 0 5px rgba(80,250,123,0.5); }\n    .bar-darkgreen { background: linear-gradient(90deg, #05870e, #2e7d32); box-shadow: 0 0 5px rgba(5,135,14,0.5); }\n    .bar-blue { background: linear-gradient(90deg, #4272f5, #82b1ff); box-shadow: 0 0 5px rgba(66,114,245,0.5); }\n    .bar-cyan { background: linear-gradient(90deg, #00e5ff, #84ffff); box-shadow: 0 0 5px rgba(0,229,255,0.5); }\n    .bar-orange { background: linear-gradient(90deg, #fab025, #ffe082); box-shadow: 0 0 5px rgba(250,176,37,0.5); }\n    .bar-yellow { background: linear-gradient(90deg, #faf325, #ffffb0); box-shadow: 0 0 5px rgba(250,243,37,0.5); }\n    .bar-purple { background: linear-gradient(90deg, #8a42f5, #b388ff); box-shadow: 0 0 5px rgba(138,66,245,0.5); }\n    .bar-pink { background: linear-gradient(90deg, #fc8bd5, #ff80ab); box-shadow: 0 0 5px rgba(252,139,213,0.5); }\n    .bar-brown { background: linear-gradient(90deg, #a15012, #8d6e63); box-shadow: 0 0 5px rgba(161,80,18,0.5); }\n    .bar-default { background: linear-gradient(90deg, #ff5252, #ff8a80); }\n\n    /* Grid Layout */\n    .list-grid-view {\n        display: grid;\n        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));\n        gap: 8px;\n        width: 100%;\n    }\n    .list-inventory-view {\n        display: grid;\n        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n        gap: 8px;\n        width: 100%;\n    }\n    .grid-tile {\n        background: rgba(40, 0, 60, 0.8);\n        border: 1px solid var(--border-color);\n        padding: 6px 10px;\n        border-radius: 4px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        color: #fff;\n        font-weight: bold;\n        font-size: 0.95em;\n    }\n    .tile-name { \n        overflow: hidden; text-overflow: ellipsis; white-space: nowrap; \n    }\n    .tile-qty {\n        color: var(--accent-primary);\n        font-size: 0.85em;\n        margin-left: 8px;\n        flex-shrink: 0;\n    }\n    /* Shared header style — .nested-section-header used in exported HTML; .grid-group-header builder-only */\n    .nested-section-header,\n    .grid-group-header {\n        font-size: 0.9em; font-weight: bold; color: var(--accent-primary);\n        border-bottom: 1px solid rgba(200, 64, 255, 0.3);\n        text-transform: uppercase; letter-spacing: 0.5px;\n    }\n    .nested-section-header { padding-bottom: 2px; margin-bottom: 4px; margin-top: 8px; }\n    /* .grid-group-header has more vertical breathing room */\n    .grid-group-header { padding-bottom: 4px; margin-bottom: 8px; }\n    .simple-list { margin-top: 4px; }\n    .list-collapse-wrapper { margin-top: 4px; }\n    .list-collapse-header { user-select: none; }\n    .list-collapse-header:hover { opacity: 0.85; }\n    .list-entry { padding: 1px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }\n    .entry-title { color: var(--text-primary); font-weight: bold; font-size: 0.95em; }\n    .entry-desc { font-size: 0.85em; color: #ccc; }\n    \n    /* Checkbox Row */\n    .kin-checkbox-row {\n        font-size: 0.9em;\n        background: rgba(0,0,0,0.2);\n        padding: 4px 8px;\n        border-radius: 4px;\n        width: 100%;\n        gap: 8px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        flex-wrap: wrap;\n    }\n    .kin-checkbox-label {\n        display: flex; align-items: center; gap: 6px;\n        cursor: pointer; color: var(--text-primary);\n        user-select: none;\n    }\n    .kin-checkbox-text {\n        color: #d4a8ff;\n        display: block;\n        flex: 1 1 auto;\n        min-width: 0;\n        white-space: normal;\n        overflow-wrap: anywhere;\n        word-break: break-word;\n    }\n    .kin-checkbox-control {\n        flex: 0 0 auto;\n        width: auto;\n        min-width: 20px;\n        margin-left: auto;\n        justify-content: flex-end;\n    }\n    .kin-checkbox-label input { margin: 0; cursor: pointer; }\n\n    /* On narrow layouts, place checkbox on next line so long labels remain fully visible */\n    @media (max-width: 560px) {\n        .kin-checkbox-text {\n            flex: 1 0 100%;\n        }\n        .kin-checkbox-control {\n            flex: 1 0 100%;\n            width: 100%;\n            margin-left: 0;\n            justify-content: flex-end;\n        }\n    }\n\n    .img-wrapper {\n        position: relative;\n    }\n    .avatar-img {\n        max-width: 100%;\n        height: auto;\n    }\n    \n    .img-popup-overlay {\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        background: rgba(0,0,0,0.85);\n        z-index: 9999;\n        display: none;\n        align-items: center;\n        justify-content: center;\n        cursor: zoom-out;\n        padding: 12px;\n        box-sizing: border-box;\n    }\n    .img-popup-content {\n        max-width: calc(100vw - 24px);\n        max-height: calc(100vh - 24px);\n        width: auto;\n        height: auto;\n        display: block;\n        border-radius: 4px;\n        box-shadow: 0 0 20px rgba(0,0,0,0.5);\n        object-fit: contain;\n    }\n    .img-edit-btn {\n        position: absolute;\n        bottom: 8px;\n        right: 8px;\n        background: rgba(0,0,0,0.6);\n        color: white;\n        width: 32px;\n        height: 32px;\n        border-radius: 50%;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        cursor: pointer;\n        font-size: 16px;\n        border: 1px solid rgba(255,255,255,0.3);\n        transition: background 0.2s;\n        z-index: 10;\n    }\n    .img-edit-btn:hover {\n        background: rgba(0,0,0,0.9);\n        border-color: white;\n    }\n\n    .st-checkbox { width: 20px; height: 20px; cursor: pointer; accent-color: #c840ff; }\n    .ar-checkbox-input {\n        width: 20px;\n        height: 20px;\n        margin: 0;\n        cursor: pointer;\n        accent-color: #c840ff;\n        appearance: auto;\n        -webkit-appearance: checkbox;\n        position: static;\n        transform: none;\n    }\n    .lorebook-placeholder-img { width: 100%; height: 150px; border: 2px dashed #ff5252; background: rgba(255, 82, 82, 0.1); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #ff5252; font-size: 0.9em; padding: 10px; text-align: center; }\n\n    /* Local Pagination (Small) — CardRenderer inline pager; base flex from shared rule above */\n    .pagination-controls-sm { gap: 10px; margin-top: 8px; padding-top: 4px; border-top: 1px dashed rgba(200, 64, 255, 0.15); }\n    .block-jump-select { background: rgba(200,64,255,0.08); border: 1px solid rgba(200,64,255,0.3); color: #ffffff; font-size: 0.85em; padding: 2px 6px; border-radius: 4px; max-width: 180px; cursor: pointer; outline: none; }\n    .block-jump-select:focus { border-color: #c840ff; }\n    .block-jump-select option { background: #1a1d24; color: #e0e0e0; }\n    .pager-btn-sm { background: transparent; border: 1px solid rgba(200, 64, 255, 0.5); color: #c840ff; width: 20px; height: 20px; font-size: 0.8em; border-radius: 3px; cursor: pointer; display: flex; align-items: center; justify-content: center; }\n    .pager-btn-sm:disabled { color: #555; border-color: #555; cursor: not-allowed; }\n    .page-info-sm { font-size: 0.75em; color: #888; }\n\n    /* Grid Container & Groups (Builder-side layout wrapper) */\n    .grid-group-card { border: 1px solid rgba(200, 64, 255, 0.15); border-radius: 4px; padding: 8px; background: rgba(0,0,0,0.2); margin-top: 5px; }\n    .grid-group-content { display: flex; flex-wrap: wrap; margin: 0 -4px; }\n    .grid-item { box-sizing: border-box; padding: 4px; min-width: 80px; flex: 1 0 auto; }\n    .grid-item .prop-row { border-bottom: none; background: rgba(255,255,255,0.03); padding: 4px 8px; border-radius: 3px; }\n\n    /* Image Card Layout Wrapper */\n    .image-card { display: flex; flex-direction: column; align-items: center; gap: 10px; }\n    .p-avatar { width: 100%; border: 1px solid #c840ff; border-radius: 4px; }\n    .p-name { font-family: serif; font-size: 1.2em; color: #c840ff; }\n\n    /* Quest List Card — canonical class, used by both Builder preview and exported HTML template (tmpl-quest) */\n    .quest-card { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 4px; margin-bottom: 8px; border-left: 3px solid var(--accent-primary); position: relative; }\n    .quest-card-header { display: flex; justify-content: space-between; margin-bottom: 4px; }\n    .quest-card-title { font-weight: bold; color: var(--text-primary); }\n    .quest-card-actions { display: flex; gap: 8px; align-items: center; }\n    .quest-delete-btn { background: rgba(255,100,100,0.2); border: 1px solid rgba(255,100,100,0.4); color: #ff6b6b; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 0.9em; line-height: 1; }\n    .quest-difficulty { font-size: 0.8em; background: #333; padding: 2px 6px; border-radius: 4px; }\n    .quest-desc { font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; }\n    .quest-reward { font-size: 0.8em; color: #ffd700; }\n    .quest-last-updated { font-size: 0.75em; color: #888; margin-top: 4px; }\n\n    /* Inventory / Equipment Action item controls */\n    .item-action-wrap { position: relative; width: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }\n    .item-menu-btn { background: rgba(200,64,255,0.15); border: 1px solid rgba(200,64,255,0.4); color: #c840ff; border-radius: 4px; font-size: 14px; cursor: pointer; padding: 0 6px; line-height: 18px; z-index: 10; }\n    .item-action-menu { display: none; position: absolute; bottom: 22px; right: 0; min-width: 100px; background: rgba(30,0,55,0.95); border: 1px solid rgba(200,64,255,0.4); border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 9999; overflow: hidden; }\n    .action-equip-btn, .action-delete-btn { display: none; width: 100%; text-align: left; background: transparent; border: none; padding: 6px 10px; cursor: pointer; font-size: 0.8em; }\n    .action-equip-btn { display: none; color: #c840ff; }\n    .action-delete-btn { display: block; color: #ff8a80; }\n    .unequip-btn { background: rgba(255,100,100,0.2); border: 1px solid rgba(255,100,100,0.4); color: #ff6b6b; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 1em; line-height: 1; min-width: 30px; }\n\n    /* Item Detail Modal — ID-based; used only in exported HTML (detail-modal popup for item inspection) */\n    #detail-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(2px); }\n    #detail-content { background: #1a0033; border: 1px solid #c840ff; padding: 20px; border-radius: 8px; width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; color: #f0e6ff; position: relative; box-shadow: 0 0 20px rgba(200, 64, 255, 0.2); }\n    #detail-close-btn { position: absolute; top: 10px; right: 15px; background: none; border: none; color: #d4a8ff; font-size: 24px; cursor: pointer; }\n    #detail-close-btn:hover { color: #fff; }\n    #detail-title { margin-top: 0; color: #c840ff; border-bottom: 1px solid rgba(200,64,255,0.3); padding-bottom: 10px; }\n    .detail-row { display: flex; margin-bottom: 5px; font-size: 0.9em; }\n    .detail-key { font-weight: bold; color: #d4a8ff; min-width: 100px; }\n    .detail-val { color: #f0e6ff; white-space: pre-wrap; }\n",
+  "staticLocale": {
+    "empty_none": "None",
+    "empty_quest": "No active quests",
+    "empty_skills": "No skills learned",
+    "empty_equipped": "No belongings equipped",
+    "empty_inventory": "Empty inventory",
+    "header_kin_stats": "Status Attributes",
+    "header_core_status": "Core Status"
+  },
+  "globalLogic": "/**\n * Global Recalculation Hook\n * Called when an item is equipped or unequipped.\n * Love genre: Belongings are cosmetic — no derived stats to recalculate.\n */\nwindow.recalculateDerivedStats = function(charObj) {\n    if (!charObj) return;\n    console.log(\"Belongings changed for:\", getV(charObj, 'Name', 'Unknown'));\n    // No combat stats in Love genre. Equip/unequip is cosmetic only.\n};"
+}
