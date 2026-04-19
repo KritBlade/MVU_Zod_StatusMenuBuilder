@@ -753,7 +753,7 @@ ${e}
                         <span class="stat-bar-val"><span data-bind-curr="${i(e.mappedKey)}">?</span> / <span data-bind-max="${i(e.maxMappedKey)}">?</span></span>
                     </div>
                     <div class="stat-bar-track">
-                        <div class="stat-bar-fill bar-${e.barColor||"default"}" style="width:50%;" data-bind-bar="${i(e.mappedKey)}"></div>
+                        <div class="stat-bar-fill bar-${e.barColor||"default"}" style="width:50%;" data-bind-bar="${i(e.mappedKey)}"${e.maxMappedKey?` data-bind-bar-max="${i(e.maxMappedKey)}"`:""}></div>
                     </div>
                 </div>`;break;case"Image":const l=e.title||"Avatar",c=qi("lbl_img",e.id,l);if(e.sourceType==="lorebook"){const I=e.lorebookKey||"";s=`
                     <div class="img-wrapper" style="text-align:center;">
@@ -2114,8 +2114,14 @@ function renderBlock(containerId, data, templateId, rootData) {
     root.querySelectorAll('[data-bind-bar]').forEach(el => {\r
         const path = el.getAttribute('data-bind-bar');\r
         if (path !== null) {\r
-            let maxPath = path.replace('_curr', '_max');\r
-            if(maxPath === path) maxPath = path + '_max';\r
+            const explicitMaxPath = el.getAttribute('data-bind-bar-max');\r
+            let maxPath;\r
+            if (explicitMaxPath) {\r
+                maxPath = explicitMaxPath;\r
+            } else {\r
+                maxPath = path.replace('_curr', '_max');\r
+                if (maxPath === path) maxPath = path + '_max';\r
+            }\r
             const cur = Number(getV(data, path, 0)) || 0;\r
             const max = Number(getV(data, maxPath, 100)) || 100;\r
             const pct = Math.min(100, Math.max(0, (cur / max) * 100));\r
