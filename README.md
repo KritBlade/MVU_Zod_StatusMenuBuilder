@@ -1,6 +1,6 @@
 # MVU Zod Status Menu Builder
 
-> A companion system that works with **any** MVU Zod based character card!
+> A companion system that works with **any** MVU Zod based character card! Currently support RPG hack and slash/Magic genre and Slice of Life/Dating genre kind of SillyTavern Character card.
 
 This Status Menu Builder is an advanced tool that allows you to build the layout of a status menu in any browser simply by clicking and dragging. All data is saved locally on your computer and remains persistent in SillyTavern. 
 
