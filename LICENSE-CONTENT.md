@@ -1,4 +1,4 @@
-# MVU Game Maker Content License
+# MVU Zod Status Menu Builder Content License
 
 Version 1.0
 
@@ -18,7 +18,7 @@ This document governs the licensing of all non-code creative content associated 
 * Creative writing assets
 * Example projects
 * Bundled content
-* Official MVU Game Maker universes and settings
+* Official MVU Zod Status Menu Builder universes and settings
 
 Software source code is licensed separately under AGPL-3.0 unless otherwise stated.
 
@@ -26,7 +26,7 @@ Software source code is licensed separately under AGPL-3.0 unless otherwise stat
 
 # 1. License
 
-All official MVU Game Maker creative content is licensed under:
+All official MVU Zod Status Menu Builder creative content is licensed under:
 
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 (CC BY-NC-SA 4.0)
@@ -56,7 +56,7 @@ provided that:
 
 # 3. Commercial Use Restriction
 
-Commercial use of official MVU Game Maker content is prohibited without explicit written permission.
+Commercial use of official MVU Zod Status Menu Builder content is prohibited without explicit written permission.
 
 This includes, but is not limited to:
 
@@ -75,7 +75,7 @@ This includes, but is not limited to:
 
 # 4. Generated Content and Derivative Works
 
-Character cards, lorebooks, scenarios, prompts, or other creative outputs generated using official MVU Game Maker templates, frameworks, lore, or bundled creative assets are considered derivative works of MVU Game Maker content unless explicitly stated otherwise.
+Character cards, lorebooks, scenarios, prompts, or other creative outputs generated using official MVU Zod Status Menu Builder templates, frameworks, lore, or bundled creative assets are considered derivative works of MVU Zod Status Menu Builder content unless explicitly stated otherwise.
 
 Such derivative works inherit this same CC BY-NC-SA 4.0 license.
 
@@ -85,17 +85,17 @@ Commercial monetization of such derivative works is prohibited without permissio
 
 # 5. Original User Content
 
-Users retain ownership of their own wholly original content that does not substantially derive from official MVU Game Maker assets, templates, settings, lore, or bundled creative frameworks.
+Users retain ownership of their own wholly original content that does not substantially derive from official MVU Zod Status Menu Builder assets, templates, settings, lore, or bundled creative frameworks.
 
-However, projects that substantially incorporate official MVU Game Maker content remain subject to this license.
+However, projects that substantially incorporate official MVU Zod Status Menu Builder content remain subject to this license.
 
 ---
 
 # 6. Third-Party Intellectual Property
 
-Users are solely responsible for ensuring they possess appropriate rights to any third-party intellectual property used within MVU Game Maker projects.
+Users are solely responsible for ensuring they possess appropriate rights to any third-party intellectual property used within MVU Zod Status Menu Builder projects.
 
-MVU Game Maker does not grant rights to any third-party franchises, characters, trademarks, or copyrighted materials.
+MVU Zod Status Menu Builder does not grant rights to any third-party franchises, characters, trademarks, or copyrighted materials.
 
 ---
 
