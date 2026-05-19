@@ -4,9 +4,10 @@ Version 1.0
 
 ## Overview
 
-This document governs the licensing of all non-code creative content associated with MVU Game Maker, including but not limited to:
+This document governs the licensing of all non-code creative content associated with MVU Zod Status Menu Builder, including but not limited to:
 
 * Character cards
+* GUI template
 * Lorebooks
 * Worldbuilding
 * Prompt templates
