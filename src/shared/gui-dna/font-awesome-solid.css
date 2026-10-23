@@ -1,0 +1,22 @@
+/* font-awesome-solid.css — Font Awesome 6.5.2's solid set, the one icon set the GUI-DNA uses (the version SillyTavern
+ * bundles). The icon classes come from the package's fontawesome.css; this file gives them the solid face as woff2
+ * only, so the single-file build inlines one font. */
+
+@import "@fortawesome/fontawesome-free/css/fontawesome.min.css";
+
+:root {
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2") format("woff2");
+}
+
+.fa-solid {
+    font-weight: 900;
+}

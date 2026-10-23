@@ -1,0 +1,88 @@
+/* palette.css — the builder's palette for the GUI-DNA: every colour its pages use, as tokens on the root class
+ * (the roles: mvu-helper's devdoc/gui-dna.md §3). Changing the builder's colours means editing this file only;
+ * gui-dna.css and app.css hold no colour (tools/test-gui-dna.mjs).
+ *
+ * Neon Night: a near-black canvas lit by a faint cyan glow at the top, dark cards with a lighter header band,
+ * fields a shade darker than the cards, a top bar running from royal blue at its left to near-black at its right,
+ * and a cyan accent. Every text pair reads at least 4.5:1 and every control at least 3:1.
+ *
+ * Contrast, measured (WCAG): text 15.1 on the card, 14.0 on the header band, 16.4 on the canvas, 16.5 on a field,
+ * 13.0 on a raised row; muted 6.3 on the card, 6.9 on the canvas, 6.9 on a field, 5.4 on a raised row; faint 5.1 on
+ * the card, 4.7 on the header band, 5.6 on a field; on-accent 9.4 on the accent fill, 11.8 on its hover and 11.9
+ * on the accent itself (a checkbox's tick); accent ink 11.6 on the card; each status ink 5.6–11.1 on its soft fill
+ * over the card, a raised row, the canvas or a field; text 14.4 in the danger zone. Controls: switch on 12.6 and off
+ * 3.3 against the card, the knob 5.0 on the track; the focus ring 8.7–11.0 on every surface. A field reads 1.10
+ * against the card and the card 1.09 against the canvas. The canvas glow's lightest stop keeps muted at 6.1, faint
+ * at 4.9 and each status ink at 6.4 or more. The top bar's lightest stop is its left end: nav text 5.7 there and 4.9
+ * on a hovered item, the brand icon and the bar's focus ring 4.7, group dividers 3.2, and the open tab's fill stands
+ * 3.8 apart from it with its text 9.4 on the fill; at the bar's right end nav text reads 17.2. A changed value is
+ * measured again. */
+
+.smb-ui {
+    /* Surfaces */
+    --smb-bg: #0b0e14;
+    --smb-surface: #141821;
+    --smb-surface-header: #1a1f2b;
+    --smb-surface-raised: #1f2532;
+    --smb-field: #0a0d12;
+    --smb-border: #2a3140;
+    --smb-border-strong: #45506a;
+
+    /* Text */
+    --smb-text: #e6edf6;
+    --smb-text-muted: #8b9bb4;
+    --smb-text-faint: #7d8aa3;
+
+    /* Top bar: royal blue at its left to near-black at its right (its gradient below), with its own text colours;
+       the open tab is the accent fill */
+    --smb-nav: #02060e;
+    --smb-nav-text: #e6edf6;
+    --smb-nav-text-muted: #a9b5c8;
+    --smb-nav-accent: #00f2ea;
+    --smb-nav-hover: rgb(255 255 255 / 7%);
+    --smb-nav-active: var(--smb-accent-fill);
+    --smb-nav-active-text: var(--smb-on-accent);
+    --smb-nav-active-glow: var(--smb-accent-glow);
+
+    /* Accent: graphics use the accent itself; dark text and the focus ring use the fill; cyan text and icons on a
+       dark surface use the ink */
+    --smb-accent: #00f2ea;
+    --smb-accent-fill: #00d9d0;
+    --smb-accent-fill-hover: #3ff0e8;
+    --smb-on-accent: #032220;
+    --smb-accent-ink: #2ee8e0;
+    --smb-accent-soft: rgb(0 242 234 / 12%);
+
+    /* Switch */
+    --smb-switch-off: #5f6b82;
+    --smb-switch-knob: #f4f7fb;
+
+    /* Status: the colour marks the dot, border and fill; the word is written in the ink */
+    --smb-success: #22c55e;
+    --smb-success-soft: rgb(34 197 94 / 16%);
+    --smb-success-ink: #5fe596;
+    --smb-warning: #f59e0b;
+    --smb-warning-soft: rgb(245 158 11 / 16%);
+    --smb-warning-ink: #fcc54d;
+    --smb-danger: #f43f5e;
+    --smb-danger-soft: rgb(244 63 94 / 14%);
+    --smb-danger-border: rgb(244 63 94 / 50%);
+    --smb-danger-ink: #ff8197;
+    --smb-neutral: #94a3b8;
+    --smb-neutral-soft: rgb(148 163 184 / 14%);
+    --smb-neutral-ink: #cfd8e3;
+
+    /* Dialog */
+    --smb-dialog-shadow: 0 12px 32px rgb(0 0 0 / 55%);
+    --smb-dialog-backdrop: rgb(3 5 9 / 72%);
+
+    /* Gradients: the canvas glows and the top bar runs from blue to black; every other layer is flat */
+    --smb-bg-gradient: radial-gradient(80% 50% at 50% 0%, rgb(0 242 234 / 7%), transparent 100%);
+    --smb-surface-gradient: none;
+    --smb-surface-header-gradient: none;
+    --smb-surface-raised-gradient: none;
+    --smb-nav-gradient: linear-gradient(90deg, #0356c5 0%, var(--smb-nav) 100%);
+    --smb-accent-gradient: none;
+    --smb-accent-gradient-hover: none;
+    --smb-accent-glow: 0 0 14px rgb(0 242 234 / 35%);
+}

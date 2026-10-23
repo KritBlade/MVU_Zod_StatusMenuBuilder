@@ -2,7 +2,7 @@
 
 MVU Zod Status Menu Builder is a standalone app that runs in your browser. It builds the parts of an MVU game that are not code: the status menu the player sees, the schema behind the variables, and event packs that add new story to a game.
 
-Version 2 is built for [MVU Helper](https://github.com/KritBlade/mvu-helper) and its MVU Game Engine v2.0. What it exports is a pack that MVU Helper installs onto a card.
+Version 2 is built for [MVU Helper](https://github.com/KritBlade/mvu-helper) and its MVU Game Engine v2.0. What it exports is a pack that MVU Helper installs onto a card.  It doesn't work with MVU Game Maker.
 
 <div align="center">
   <img alt="The Builder page drawing ArtificKoi's Classmates tab, with the live preview" src="Images/builder_repeat.png" />
@@ -51,7 +51,7 @@ What the packs do once they're installed is on MVU Helper's side:
 - **The Action Button cell is new.** A list can also put its own buttons on every row, and a Checkbox can be read only.
 - **Cell formulas moved out of the layout.** On export, each formula becomes a named function in `layoutFormatters.cjs`, and the layout only keeps its name.
 
-Version 1.0 is still here as [dist/index-1.0.html](dist/index-1.0.html), if you need it.
+Version 1.0 is still here as [dist/old-version/index-1.0.html](dist/old-version/index-1.0.html), if you need it for [mvu-game-maker](https://github.com/KritBlade/MVU_Game_Maker).
 
 ## What your game card needs
 
