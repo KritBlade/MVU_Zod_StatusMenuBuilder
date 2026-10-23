@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import BuilderLayout from './components/BuilderLayout.vue'
+import MakerLayout from './components/MakerLayout.vue'
 </script>
 
 <template>
-  <BuilderLayout />
+  <MakerLayout />
 </template>

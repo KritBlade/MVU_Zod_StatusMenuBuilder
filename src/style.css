@@ -1,42 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
-
-:root {
-  --font-main: 'Outfit', sans-serif;
-  
-  /* Palette */
-  --color-bg-deep: #050507;
-  --color-bg-card: rgba(255, 255, 255, 0.03);
-  --color-accent-primary: #00f2ea;
-  --color-accent-secondary: #ff0050;
-  --color-text-main: #ffffff;
-  --color-text-muted: #8b9bb4;
-  
-  /* Gradients */
-  --grad-glow: radial-gradient(circle at 50% 50%, rgba(0, 242, 234, 0.15), transparent 60%);
-  --grad-mesh:conic-gradient(from 0deg at 50% 50%, #050507 0deg, #180022 120deg, #001a2c 240deg, #050507 360deg);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html, body, #app {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 body {
-  font-family: var(--font-main);
-  background: var(--color-bg-deep);
-  color: var(--color-text-main);
-  overflow-x: hidden;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #0f1115;
+    color: #e0f7fa;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Utilities */
-a { text-decoration: none; color: inherit; }
-button { font-family: inherit; }
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--color-bg-deep); }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #555; }
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1d24;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
