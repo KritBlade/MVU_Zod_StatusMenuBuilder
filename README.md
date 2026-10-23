@@ -1,73 +1,62 @@
-# MVU Zod Status Menu Builder
+# MVU Zod Status Menu Builder v2
 
-> A companion system that works with [MVU Game Maker](https://github.com/KritBlade/MVU_Game_Maker)! Currently support RPG hack and slash/Magic genre and Slice of Life/Dating genre kind of SillyTavern Character card.
+MVU Zod Status Menu Builder is a standalone app that runs in your browser. It builds the parts of an MVU game that are not code: the status menu the player sees, the schema behind the variables, and event packs that add new story to a game.
 
-This Status Menu Builder is an advanced tool that allows you to build the layout of a status menu in any browser simply by clicking and dragging. All data is saved locally on your computer and remains persistent in SillyTavern.   **It serves as a front end GUI inside SillyTavern to do multi character stats tracking**.  
-
+Version 2 is built for [MVU Helper](https://github.com/KritBlade/mvu-helper) and its MVU Game Engine v2.0. What it exports is a pack that MVU Helper installs onto a card.
 
 <div align="center">
-  <img alt="Builder Screenshot" src="Images/builder.jpg" />
+  <img alt="The Builder page drawing ArtificKoi's Classmates tab, with the live preview" src="Images/builder_repeat.png" />
 </div>
 
-📺 **[Watch the Usage Demo on YouTube](https://youtu.be/y_cFT5Ty6vg)**
+## Getting started
 
----
+1. Open [dist/index.html](dist/index.html) here on GitHub, and click the download button at the top right.
+2. Double-click `index.html` to open it in your browser.
+3. Click on Data Configuration tab if you have an existing layout want to import.  Otherwise you can start fresh by clicking on Load Default Data to populate sample data so that you can click on the Builder tab to start building.
 
-## 🚀 Getting Started
+That's it. The whole app is that one file. Nothing gets installed, and nothing is sent anywhere.
 
-All you need to do is download the release, extract it, and run it. No extensions are needed to *run the builder itself*:
+**The builder doesn't save on its own.** Close the browser tab, and your work is gone. So click **Export config**, at the top of the Data Configuration page, before you close it. Next time, **Import config** loads it back.
 
-1. 📥 **[Download the Latest Release](https://github.com/KritBlade/MVU_Zod_StatusMenuBuilder/releases)**
-2. Unzip the downloaded file.
-3. Double-click on `index.html` to open the builder in your web browser.
+## What it builds
 
----
+- **The status menu.** You draw it by click and drag, and point each cell at a variable. It exports as a StatusMenu Pack, which MVU Helper installs onto your card.
+- **The schema.** You tick the variables your game keeps, and copy the Zod schema it writes for you.
+- **Event packs.** You upload a game card, and build new events for it by clicking. No code at all.
 
-## ✨ Features
+## Why it's a standalone app
 
-The builder allows you to create custom stats based entirely on your design with absolutely no limits on what variables you can track:
+A game has a lot of jobs in it. Somebody codes the game engine. Somebody draws the status menu. Somebody writes new events.
 
-* 📊 **Data Configuration:** A utility that allows you to build sample data for your specific design.
-* 📝 **Schema Output:** Defines the structure of your data so the AI knows exactly what format to follow when saving variables.
-* 🧩 **JSONPatch Utility:** Automatically generates JSONPatch rules for you.
-* 🎨 **Template System:** Completely change the colors and fonts of your status menu. You can also create custom templates for how you want to display item lists (e.g., inventory, equipment).
-* ⚔️ **Logic Tab:** Equip or unequip gear dynamically. It automatically adds or removes equipment stat bonuses and recalculates your total stats accordingly.
-* 🧠 **Advanced Field Logic:** Inject JavaScript logic directly into individual fields!
-  * *Example 1 (Dynamic Styling):* `If Mainchar.level > 70, make the color of Mainchar.Name red.`
-  * *Example 2 (Lorebook Integration):* Retrieve the content of *any* lorebook entry inside your SillyTavern story. `If Mainchar.Level > 70, retrieve the image URL from lorebook entry 'post-70-map' and display it; else, read from 'pre-70-map'.`
+The person who draws the menu or writes the events doesn't need to read the engine's code. They only need to know which data the game keeps. So the builder takes the game's data, and only offers what that game has.
 
----
+It's like an interior designer working from the floor plan. They need to know where the rooms are. They don't need to know how the plumbing works.
 
-## ⚙️ SillyTavern Installation Requirements
+## Documentation
 
-While the *Builder* doesn't require extensions to run, your **character game card** *does* require two extensions to function correctly inside SillyTavern. 
+Every page, every button and the order to use them in: [How to use MVU Zod Status Menu Builder](doc/README.md).
 
-📺 **[Full Installation Video Guide](https://www.youtube.com/watch?v=Jh1ojfiqGXI)**
+What the packs do once they're installed is on MVU Helper's side:
 
-Install required extensions: 
-   - 🔧 [Tavern Helper](https://github.com/N0VI028/JS-Slash-Runner)
-   - 🧩 [ST-Prompt-Template](https://codeberg.org/zonde306/ST-Prompt-Template/)
+- [What is Status Menu Engine](https://github.com/KritBlade/mvu-helper/blob/main/doc/statusmenu_engine/README.md)
+- [Schema](https://github.com/KritBlade/mvu-helper/blob/main/doc/gamelogic_engine/schema.md)
+- [What is EventPack Engine](https://github.com/KritBlade/mvu-helper/blob/main/doc/eventpack_engine/README.md)
 
-**Pick one of the following preset**
-   - ✨ [Megumin Suite v5+](https://github.com/Arif-salah/Megumin-Suite)  (pick v6 dreamteam lite and COT v6 lite if you are using v6)
-   - ✨ [Izumi English Preset](https://discord.gg/C6HabNwzn7) - If you don't want to use Megumin Suite, you can use this simpler preset also support MVU
-   - ✨ [Frankenstein v4.2 fatman preset](https://rentry.org/freaky-frankenstein-presets) works but without extensive testing.
+## What changed from v1.0
 
-<br><br>
+- **A new look.** The pages sit in a top bar, in 4 groups: Menu, Data, Export and Events. Every replace or delete asks first.
+- **The StatusMenu Pack page is new.** A menu ships as a pack that MVU Helper installs, instead of an HTML regex you paste by hand.
+- **The Event Pack page is new.** Build events for any card whose engine hosts event packs.
+- **The Logic tab is gone.** What a button does now lives in the menu's own engine file, `statusMenuLogic.cjs`. Equip and unequip are actions in there.
+- **The Action Button cell is new.** A list can also put its own buttons on every row, and a Checkbox can be read only.
+- **Cell formulas moved out of the layout.** On export, each formula becomes a named function in `layoutFormatters.cjs`, and the layout only keeps its name.
 
-> **Why these extensions?** The character card and the builder heavily utilize *Tavern Helper* and *ST-Prompt-Template* to enable JavaScript inside SillyTavern. Tavern Helper alone has hundreds of thousands of active users in the Chinese SillyTavern community. As long as you have these two extensions installed, you can use any utility or character card built for them without needing to install anything else!
+Version 1.0 is still here as [dist/index-1.0.html](dist/index-1.0.html), if you need it.
 
----
+## What your game card needs
+
+The builder needs nothing to run. The packs it makes need MVU Helper in SillyTavern, which rides on Tavern Helper, ST-Prompt-Template and MVU. The install steps are on [Install MVU Helper](https://github.com/KritBlade/mvu-helper/blob/main/doc/install.md).
+
 ## FAQ
-1. If you run into problem on CSS or structural issue which the output in SillyTavern doesn't match what it looks in the builder, go to Template Tab in builder and click on "StatusMenu(Global CSS), and then press the Reset to Default button on the right"
 
-## 🛠️ Advanced Logic Guide
-
-Here is a quick reference for writing custom logic inside the builder:
-
-### Standard Variables (Non-Collections)
-For any stat that is *not* inside a collection, the default pre-populated entry will read from the `"root"` source using the full path of the variable (e.g., `World.Date`). 
-
-```javascript
-// 'Default' is the fallback value if the variable is empty.
-_output = getV(root, 'World.Date', 'Default');
+**The menu in SillyTavern doesn't look like the builder's preview.** Go to the **Templates** page. In the **Global CSS and locale** card, open **Global CSS**, and click **Reset to default**. A project made with an older version keeps its old CSS until you do.
