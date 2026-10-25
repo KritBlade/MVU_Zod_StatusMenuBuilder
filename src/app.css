@@ -1,7 +1,9 @@
-/* app.css — the builder's one stylesheet entry (main.ts imports it): the icon font, the palette and the GUI-DNA
- * (shared/gui-dna/), then the builder's own rules. Colours are the palette's tokens; this file holds none. */
+/* app.css — the builder's one stylesheet entry (main.ts imports it): the fonts, the icon font, then mvu-helper's palette
+ * and GUI-DNA (shared/gui-dna/, synced copies), then the page shell. Colours are the palette's tokens; this file holds
+ * none. */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+/* The faces gui-dna.css falls back to, which SillyTavern supplies to mvu-helper: Noto Sans, and Noto Sans Mono for code. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Mono&display=swap');
 @import "./shared/gui-dna/font-awesome-solid.css";
 @import "./shared/gui-dna/palette.css";
 @import "./shared/gui-dna/gui-dna.css";
@@ -12,7 +14,8 @@
     padding: 0;
 }
 
-/* The page is the app: the top-bar shell fills the window and scrolls inside its main pane. */
+/* The page is the app, in the palette's dark theme: the top-bar shell fills the window and scrolls inside its main
+   pane. */
 html {
     color-scheme: dark;
 }
@@ -28,13 +31,6 @@ body {
 
 button {
     font-family: inherit;
-}
-
-/* The builder's faces: Outfit for text, Consolas for code. Scrollbars follow the palette. */
-.smb-ui {
-    --mainFontFamily: 'Outfit', sans-serif;
-    --monoFontFamily: 'Consolas', 'Cascadia Mono', ui-monospace, monospace;
-    scrollbar-color: var(--smb-border-strong) transparent;
 }
 
 /* The layout editor draws its own surface edge to edge (mvu-helper's devdoc/gui-dna.md §4): no main-pane padding while
