@@ -459,9 +459,12 @@ export function generateCardHtml(card, blockKey = '', absolutePrefix = '', local
              }
              break
         case 'GridContainer':
+             // Each child sits in a .grid-item, as the builder's preview draws it (CardRenderer.vue), so a theme's
+             // grid rules (the boxed stat row, `.grid-item .prop-row`) reach the live menu too. A block's own cards
+             // keep .prop-row-wrapper.
              const subCards = card.cards?.map(c => {
                  const cw = c.width || (c.type === 'GridContainer' || c.type === 'QuestList' ? 100 : 50)
-                 return `<div class="prop-row-wrapper" style="width:${cw}%">${generateCardHtml(c, blockKey, absolutePrefix, locale)}</div>`
+                 return `<div class="grid-item" style="width:${cw}%">${generateCardHtml(c, blockKey, absolutePrefix, locale)}</div>`
              }).join('') || ''
              const gcKey = locale.register('lbl_gc', card.id, card.title || '')
              innerFn = `

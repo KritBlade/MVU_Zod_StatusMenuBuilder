@@ -210,17 +210,21 @@ export const EXPORT_CSS_CONTENT = `
     /* Stat Bars */
     .stat-bar-box,
     .stat-bar-card {
+        display: flex; flex-direction: column;
         margin-bottom: 4px; padding: 4px;
         background: rgba(0,0,0,0.2); border-radius: 6px;
         border: 1px solid rgba(255,255,255,0.05);
     }
+    /* Label and value share one line while both fit. Otherwise the whole value moves below the label. */
     .stat-bar-header {
-        display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 0.9em;
+        display: flex; flex-wrap: wrap; column-gap: 4px; justify-content: space-between; margin-bottom: 4px; font-size: 0.9em;
     }
     .stat-bar-label { font-weight: bold; color: #fff; }
-    .stat-bar-val { font-family: monospace; color: #ccc; }
+    .stat-bar-val { font-family: monospace; color: #ccc; white-space: nowrap; margin-left: auto; }
     
+    /* The track sits at the foot of its box so the bars of one grid row stay level. */
     .stat-bar-track {
+        margin-top: auto;
         width: 100%;
         height: 8px;
         background: rgba(0,0,0,0.5);
@@ -437,7 +441,9 @@ export const EXPORT_CSS_CONTENT = `
     /* Grid Container & Groups (Builder-side layout wrapper) */
     .grid-group-card { border: 1px solid rgba(0, 229, 255, 0.15); border-radius: 4px; padding: 8px; background: rgba(0,0,0,0.2); margin-top: 5px; }
     .grid-group-content { display: flex; flex-wrap: wrap; margin: 0 -4px; }
-    .grid-item { box-sizing: border-box; padding: 4px; min-width: 80px; flex: 1 0 auto; }
+    /* A cell is a column its card fills so the cards of one grid row are as tall as the row. */
+    .grid-item { box-sizing: border-box; padding: 4px; min-width: 80px; flex: 1 0 auto; display: flex; flex-direction: column; }
+    .grid-item > * { flex: 1 1 auto; }
     .grid-item .prop-row { border-bottom: none; background: rgba(255,255,255,0.03); padding: 4px 8px; border-radius: 3px; }
 
     /* Image Card Layout Wrapper */
