@@ -12,18 +12,21 @@ import { askConfirm } from '../shared/gui-dna/confirm-dialog'
 
 const { mvuDataParsed, selectedPaths, collectionPaths, lockedPaths, lockTopLevel } = useBuilderState()
 
-// Roots that belong to a PLATFORM rather than to this card. Locking the top level makes Zod strip every
-// root the schema does not name, and the card is not its only writer. mvu-helper keeps three: mvuhelper,
-// its own per-reply state (what each character is wearing); EventPack, the installed event packs and which
-// have fired; and GameLogicPlugin, where every installed GameLogic Plugin owns one named subtree, chosen at
-// install time. So a locked schema that omits one deletes that state on the next write, with nothing in
-// any log. Declared open (record<string,any>) because those keys are not ours to enumerate. Emitted ONLY
-// when the lock is on — unlocked, the root's .passthrough() already lets them through.
+// Roots that belong to a PLATFORM rather than to this card. Under a locked top level, Zod drops every write
+// into a root the schema does not name, and the card is not its only writer. mvu-helper keeps three:
+// $mvuhelper, its own state (what each character wears, the character registry); EventPack, the installed
+// event packs and which have fired; and GameLogicPlugin, where every installed GameLogic Plugin owns one named
+// subtree, chosen at install time. $mvuhelper and GameLogicPlugin hold keys nobody can list here, so they are
+// always declared open (record<string,any>) and a sample's own shape for them is ignored: a shape built from
+// the sample would strip every key the sample did not happen to hold, and mvu-helper's pack check refuses a
+// closed one. EventPack takes the sample's shape when the sample has one. Emitted ONLY when the lock is on —
+// unlocked, the root's .passthrough() already lets them through.
 const PLATFORM_ROOTS = [
-    { name: 'mvuhelper', schema: 'z.record(z.string(), z.any()).prefault({})' },
-    { name: 'EventPack', schema: 'z.record(z.string(), z.any()).prefault({})' },
-    { name: 'GameLogicPlugin', schema: 'z.record(z.string(), z.any()).prefault({})' },
+    { name: '$mvuhelper', schema: 'z.record(z.string(), z.any()).prefault({})', isShapeFromSample: false },
+    { name: 'EventPack', schema: 'z.record(z.string(), z.any()).prefault({})', isShapeFromSample: true },
+    { name: 'GameLogicPlugin', schema: 'z.record(z.string(), z.any()).prefault({})', isShapeFromSample: false },
 ]
+const SAMPLE_BLIND_ROOTS = new Set(PLATFORM_ROOTS.filter((root) => !root.isShapeFromSample).map((root) => root.name))
 
 // -- Local Helper: Heuristic for default Collection status --
 function isMvuEntity(obj: any): boolean {
@@ -305,7 +308,7 @@ const worldRecordEntrySchema = z.object({}).passthrough().prefault({});
     
     for (const [key, val] of Object.entries(root)) {
         const path = '.' + key
-        if (!selectedPaths.value.has(path)) continue;
+        if (!selectedPaths.value.has(path) || SAMPLE_BLIND_ROOTS.has(key)) continue;
 
         if (typeof val === 'object' && val !== null && !Array.isArray(val)) {
             
@@ -385,7 +388,7 @@ export const StatDataSchema = z
     const declaredRoots = new Set<string>()
     for (const [key, val] of Object.entries(root)) {
         const path = '.' + key
-        if (!selectedPaths.value.has(path)) continue;
+        if (!selectedPaths.value.has(path) || SAMPLE_BLIND_ROOTS.has(key)) continue;
         declaredRoots.add(key)
 
         const kStr = /^[a-zA-Z_][a-zA-Z0-9_]*$/.test(key) ? key : `'${key}'`
@@ -456,7 +459,7 @@ async function resetSelection() {
                     <div>
                         <DnaSwitchRow v-model="lockTopLevel" title="Lock top-level schema"
                             description="The model cannot add top-level categories; unselected ones are stripped." />
-                        <p class="smb-hint">mvuhelper, EventPack and GameLogicPlugin stay declared and open, so their data survives.</p>
+                        <p class="smb-hint">$mvuhelper, EventPack and GameLogicPlugin stay declared, so their data survives.</p>
                     </div>
                     <div v-if="mvuDataParsed" class="smb-tree">
                         <JsonTreeSelector

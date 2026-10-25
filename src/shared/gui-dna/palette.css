@@ -11,12 +11,12 @@
  * the card, 4.7 on the header band, 5.6 on a field; on-accent 9.4 on the accent fill, 11.8 on its hover and 11.9
  * on the accent itself (a checkbox's tick); accent ink 11.6 on the card; each status ink 5.6–11.1 on its soft fill
  * over the card, a raised row, the canvas or a field; text 14.4 in the danger zone. Controls: switch on 12.6 and off
- * 3.3 against the card, the knob 5.0 on the track; the focus ring 8.7–11.0 on every surface. A field reads 1.10
- * against the card and the card 1.09 against the canvas. The canvas glow's lightest stop keeps muted at 6.1, faint
- * at 4.9 and each status ink at 6.4 or more. The top bar's lightest stop is its left end: nav text 5.7 there and 4.9
- * on a hovered item, the brand icon and the bar's focus ring 4.7, group dividers 3.2, and the open tab's fill stands
- * 3.8 apart from it with its text 9.4 on the fill; at the bar's right end nav text reads 17.2. A changed value is
- * measured again. */
+ * 3.3 against the card, the knob 5.0 on the track; the focus ring, in the accent ink, 10.0–12.7 on every surface and
+ * 7.5 at its lowest on a status fill. A field reads 1.10 against the card and the card 1.09 against the canvas. The
+ * canvas glow's lightest stop keeps muted at 6.1, faint at 4.9 and each status ink at 6.4 or more. The top bar's
+ * lightest stop is its left end: nav text 5.7 there and 4.9 on a hovered item, the brand icon and the bar's focus
+ * ring 4.7, group dividers 3.2, and the open tab's fill stands 3.8 apart from it with its text 9.4 on the fill; at the
+ * bar's right end nav text reads 17.2. A changed value is measured again. */
 
 .smb-ui {
     /* Surfaces */
@@ -24,6 +24,7 @@
     --smb-surface: #141821;
     --smb-surface-header: #1a1f2b;
     --smb-surface-raised: #1f2532;
+    --smb-surface-solid: var(--smb-surface);
     --smb-field: #0a0d12;
     --smb-border: #2a3140;
     --smb-border-strong: #45506a;
@@ -43,8 +44,9 @@
     --smb-nav-active: var(--smb-accent-fill);
     --smb-nav-active-text: var(--smb-on-accent);
     --smb-nav-active-glow: var(--smb-accent-glow);
+    --smb-nav-edge: transparent;
 
-    /* Accent: graphics use the accent itself; dark text and the focus ring use the fill; cyan text and icons on a
+    /* Accent: graphics use the accent itself; dark text uses the fill; cyan text, icons and the focus ring on a
        dark surface use the ink */
     --smb-accent: #00f2ea;
     --smb-accent-fill: #00d9d0;
@@ -85,4 +87,9 @@
     --smb-accent-gradient: none;
     --smb-accent-gradient-hover: none;
     --smb-accent-glow: 0 0 14px rgb(0 242 234 / 35%);
+
+    /* Glass: none. The surfaces are solid, so the solid surface is the card's, and no rim or lift is drawn */
+    --smb-surface-rim: none;
+    --smb-surface-shadow: none;
+    --smb-surface-raised-shadow: none;
 }

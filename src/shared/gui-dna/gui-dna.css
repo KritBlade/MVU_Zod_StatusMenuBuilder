@@ -45,10 +45,13 @@
     background-image: var(--smb-bg-gradient);
 }
 
+/* The edge parts the nav from the main pane: beside the rail, under the top bar and the phone strip. A shadow, not a
+   border, so it takes no room. */
 .smb-ui .smb-nav {
     flex: 0 0 200px;
     min-width: 0;   /* a flex item never shrinks below its content otherwise — the phone strip must scroll */
     background: var(--smb-nav);
+    box-shadow: 1px 0 0 var(--smb-nav-edge);
 }
 
 /* The rail's gradient sits on the sticky inner, so it stays behind the items while the page scrolls. When the adopter
@@ -130,6 +133,53 @@
     color: var(--smb-nav-active-text);
 }
 
+/* The rail's foot holds what belongs to the panel itself, the theme switch. On a rail as tall as the column it sits at
+   the bottom; on one only as tall as its items, under the last item. */
+.smb-ui .smb-nav-footer {
+    margin-top: auto;
+    padding: 16px 2px 0;
+}
+
+/* The theme switch: one option per theme in a pill track, the chosen one drawn like the active nav item. */
+.smb-ui .smb-theme-switch {
+    display: flex;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 999px;
+    background: var(--smb-nav-hover);
+}
+
+.smb-ui .smb-theme-option {
+    display: inline-flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 32px;
+    margin: 0;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 999px;
+    background: none;
+    color: var(--smb-nav-text-muted);
+    font: inherit;
+    font-size: 0.86em;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color var(--smb-motion), color var(--smb-motion);
+}
+
+.smb-ui .smb-theme-option:hover {
+    color: var(--smb-nav-text);
+}
+
+.smb-ui .smb-theme-option.is-active {
+    background-color: var(--smb-nav-active);
+    box-shadow: var(--smb-nav-active-glow);
+    color: var(--smb-nav-active-text);
+}
+
 .smb-ui .smb-main {
     flex: 1 1 0;
     min-width: 0;
@@ -153,6 +203,7 @@
 
 .smb-ui.is-topbar > .smb-nav {
     flex: 0 0 auto;
+    box-shadow: 0 1px 0 var(--smb-nav-edge);
 }
 
 /* The bar packs tighter than the rail: the brand and the items on one row. When they do not fit, the brand's name gives
@@ -203,6 +254,13 @@
     white-space: nowrap;
 }
 
+/* The bar ends on the theme switch. */
+.smb-ui.is-topbar .smb-nav-footer {
+    flex: 0 0 auto;
+    margin: 0 0 0 auto;
+    padding: 0 0 0 8px;
+}
+
 .smb-ui.is-topbar > .smb-main {
     flex: 1 1 auto;
     min-height: 0;
@@ -227,6 +285,7 @@
     border-radius: 10px;
     background-color: var(--smb-surface-raised);
     background-image: var(--smb-surface-raised-gradient);
+    box-shadow: var(--smb-surface-raised-shadow);
     color: var(--smb-accent-ink);
     font-size: 1.1em;
 }
@@ -270,7 +329,25 @@
     border-radius: var(--smb-radius-card);
     background-color: var(--smb-surface);
     background-image: var(--smb-surface-gradient);
+    box-shadow: var(--smb-surface-shadow);
     overflow: hidden;
+}
+
+/* The rim: a 1px ring inside a card's or a record card's border, painted with --smb-surface-rim, so the edge catches
+   the light. The mask keeps only the ring; a mask reads alpha alone, so currentColor paints it opaque without naming a
+   colour. */
+.smb-ui :is(.smb-card, .smb-record)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    padding: 1px;
+    border-radius: inherit;
+    background: var(--smb-surface-rim);
+    -webkit-mask: linear-gradient(currentColor 0 0) content-box, linear-gradient(currentColor 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .smb-ui .smb-card-header {
@@ -648,8 +725,9 @@
     cursor: pointer;
 }
 
+/* A select's list opens over the page, where no canvas lies under a see-through field: it takes the solid surface. */
 .smb-ui .smb-select option {
-    background-color: var(--smb-field);
+    background-color: var(--smb-surface-solid);
     color: var(--smb-text);
 }
 
@@ -1006,6 +1084,7 @@
     border: 1px solid var(--smb-border);
     border-radius: 999px;
     background-color: var(--smb-surface-raised);
+    box-shadow: var(--smb-surface-raised-shadow);
     color: var(--smb-text);
     font-size: 0.78em;
     font-weight: 600;
@@ -1113,6 +1192,7 @@
     border-radius: var(--smb-radius-card);
     background-color: var(--smb-surface-raised);
     background-image: var(--smb-surface-raised-gradient);
+    box-shadow: var(--smb-surface-raised-shadow);
 }
 
 .smb-ui .smb-action-card.is-primary {
@@ -1163,6 +1243,7 @@
     border-radius: var(--smb-radius-control);
     background-color: var(--smb-surface-raised);
     background-image: var(--smb-surface-raised-gradient);
+    box-shadow: var(--smb-surface-raised-shadow);
 }
 
 .smb-ui .smb-row-icon {
@@ -1199,13 +1280,15 @@
     display: none;
 }
 
-/* A record holds fields, so it is drawn like a card: the white fields stand out on its surface, and its header sits
-   on the tinted band. */
+/* A record holds fields, so it is drawn like a card: its fields stand out on its surface, its header sits on the tinted
+   band, and its edge carries the card's rim and lift. */
 .smb-ui .smb-record {
+    position: relative;
     border: 1px solid var(--smb-border);
     border-radius: var(--smb-radius-card);
     background-color: var(--smb-surface);
     background-image: var(--smb-surface-gradient);
+    box-shadow: var(--smb-surface-shadow);
     overflow: hidden;
 }
 
@@ -1395,7 +1478,8 @@
 /* ── Dialog ───────────────────────────────────────────────────────────────────────────────────── */
 /* A standalone app's own <dialog>. An extension in SillyTavern opens SillyTavern's popup and styles it in its own
    stylesheet; the text and the buttons inside follow the same rules either way. The margin centres it in the window
-   whatever reset the page applies. */
+   whatever reset the page applies. It floats over the page, where no canvas lies under it, so it sits on the solid
+   surface. */
 dialog.smb-ui.smb-dialog {
     box-sizing: border-box;
     width: min(520px, calc(100vw - 32px));
@@ -1404,7 +1488,7 @@ dialog.smb-ui.smb-dialog {
     padding: 0;
     border: 1px solid var(--smb-border);
     border-radius: var(--smb-radius-card);
-    background-color: var(--smb-surface);
+    background-color: var(--smb-surface-solid);
     background-image: var(--smb-surface-gradient);
     color: var(--smb-text);
     box-shadow: var(--smb-dialog-shadow);
@@ -1458,13 +1542,14 @@ dialog.smb-ui.smb-dialog::backdrop {
 }
 
 /* ── Focus and motion ─────────────────────────────────────────────────────────────────────────── */
-.smb-ui :is(.smb-nav-item, .smb-btn, .smb-input, .smb-select, .smb-textarea, .smb-switch, .smb-check, .smb-range, .smb-help-toggle, .smb-collapse, .smb-more, .smb-split-divider, .smb-tree-toggle):focus-visible {
-    outline: 2px solid var(--smb-accent-fill);
+/* The ring takes the accent ink: a text colour, it clears 3:1 on every surface, a status fill included. */
+.smb-ui :is(.smb-nav-item, .smb-theme-option, .smb-btn, .smb-input, .smb-select, .smb-textarea, .smb-switch, .smb-check, .smb-range, .smb-help-toggle, .smb-collapse, .smb-more, .smb-split-divider, .smb-tree-toggle):focus-visible {
+    outline: 2px solid var(--smb-accent-ink);
     outline-offset: 2px;
 }
 
 .smb-ui .smb-action-card:has(> .smb-btn:focus-visible) {
-    outline: 2px solid var(--smb-accent-fill);
+    outline: 2px solid var(--smb-accent-ink);
     outline-offset: 2px;
 }
 
@@ -1482,11 +1567,15 @@ dialog.smb-ui.smb-dialog::backdrop {
 
 /* ── Phone: one markup, the shell narrower than 720px ─────────────────────────────────────────── */
 @container smb-shell (max-width: 720px) {
+    /* The page scrolls under the sticky strip, so the nav colour, see-through in a glass palette, sits on the canvas
+       colour here. */
     .smb-ui .smb-nav {
         position: sticky;
         top: 0;
         z-index: 1;
         flex: 1 1 100%;
+        background: linear-gradient(var(--smb-nav) 0 0), var(--smb-bg);
+        box-shadow: 0 1px 0 var(--smb-nav-edge);
     }
 
     /* The strip is as tall as its items, never the column. A thin visible scrollbar: a finger swipes the strip, a
@@ -1512,6 +1601,13 @@ dialog.smb-ui.smb-dialog::backdrop {
         flex: 0 0 auto;
         width: auto;
         white-space: nowrap;
+    }
+
+    /* The strip ends on the theme switch. */
+    .smb-ui .smb-nav-footer {
+        flex: 0 0 auto;
+        margin: 0 0 0 auto;
+        padding: 0 0 0 8px;
     }
 
     .smb-ui.is-topbar .smb-nav-inner {
