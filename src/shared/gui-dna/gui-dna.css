@@ -1233,9 +1233,11 @@
     margin-top: 12px;
 }
 
+/* A row lays itself out by its own width, at any panel width: the name keeps 160px, so the pills wrap under it first,
+   and the actions take a line of their own across the row once they no longer fit beside it. */
 .smb-ui .smb-row {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 6px 12px;
     padding: 10px 12px;
@@ -1247,12 +1249,24 @@
 }
 
 .smb-ui .smb-row-icon {
+    flex: none;
     width: 20px;
     color: var(--smb-accent-ink);
     text-align: center;
 }
 
+/* The name and its pills: one wrapping line beside the icon. */
+.smb-ui .smb-row-info {
+    display: flex;
+    flex: 1 1 160px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+    min-width: 0;
+}
+
 .smb-ui .smb-row-main {
+    flex: 1 1 160px;
     min-width: 0;
 }
 
@@ -1275,7 +1289,7 @@
     gap: 6px;
 }
 
-/* A row with no pills or no actions keeps no empty line for them on phone. */
+/* A row with no pills or no actions keeps no gap or empty line for them. */
 .smb-ui :is(.smb-row-pills, .smb-row-actions):empty {
     display: none;
 }
@@ -1415,9 +1429,11 @@
 }
 
 /* ── Danger zone, empty state, pager ──────────────────────────────────────────────────────────── */
+/* Like a list row, it lays itself out by its own width: the text keeps 160px, and the buttons go below it, side by
+   side, once they no longer fit beside it. */
 .smb-ui .smb-danger-zone {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 6px 14px;
     padding: 16px;
@@ -1427,8 +1443,14 @@
 }
 
 .smb-ui .smb-danger-icon {
+    flex: none;
     font-size: 1.3em;
     color: var(--smb-danger);
+}
+
+.smb-ui .smb-danger-text {
+    flex: 1 1 160px;
+    min-width: 0;
 }
 
 .smb-ui .smb-danger-title {
@@ -1446,7 +1468,6 @@
 .smb-ui .smb-danger-actions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
     gap: 8px;
 }
 
@@ -1721,27 +1742,5 @@ dialog.smb-ui.smb-dialog::backdrop {
         font: var(--fa-font-solid);
         font-size: 0.8em;
         color: var(--smb-text-faint);
-    }
-
-    .smb-ui .smb-row {
-        grid-template-columns: auto minmax(0, 1fr);
-    }
-
-    .smb-ui .smb-row-pills {
-        grid-column: 2 / -1;
-    }
-
-    /* The whole line: six 40px buttons do not fit beside the leading icon at phone width. */
-    .smb-ui .smb-row-actions {
-        grid-column: 1 / -1;
-    }
-
-    .smb-ui .smb-danger-zone {
-        grid-template-columns: auto minmax(0, 1fr);
-    }
-
-    .smb-ui .smb-danger-actions {
-        grid-column: 1 / -1;
-        justify-content: flex-start;
     }
 }

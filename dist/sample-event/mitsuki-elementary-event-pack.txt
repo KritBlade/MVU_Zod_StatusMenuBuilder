@@ -1,0 +1,56 @@
+<%_ if (false) { _%>
+<mvueventpack>
+{
+  "format": "1.0",
+  "creator": "demo",
+  "event": "MitsukiElementary",
+  "version": "1.2",
+  "triggers": {
+    "demo_mitsukielementary_1": {
+      "cat": "TRG",
+      "series": "MitsukiElementary",
+      "when": "Present(Mitsuki) & Aff(Mitsuki)>=30",
+      "fx": {
+        "summary": "Mitsuki, having grown close to the protagonist, invited him to visit her old elementary school.",
+        "scope": "arc",
+        "writes": [
+          {
+            "path": "Mainchar.Quests",
+            "key": "demo_mitsukielementary_MitsukiElementary",
+            "set": {
+              "Step": 1,
+              "Title": "A Trip Down Memory Lane",
+              "Status": "On-going",
+              "Desc": "Mitsuki opened up about her childhood and wants to show you the elementary school she attended as a girl.",
+              "Objective": "Visit the elementary school with Mitsuki.",
+              "ProgressSummary": "Mitsuki invited you to her old elementary school.",
+              "Reward": "Unknown"
+            }
+          },
+          {
+            "path": "WorldRecord.Locations",
+            "key": "demo_mitsukielementary_Town_ElementarySchool",
+            "set": {
+              "Label": "Mitsuki's Elementary School",
+              "Note": "The elementary school Mitsuki attended as a child - a nostalgic spot she wants to share."
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+</mvueventpack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@demo_mitsukielementary_1') { _%>
+<Event_Pack>
+@demo_mitsukielementary_1  A Trip Down Memory Lane (Mitsuki) ·1   (CHECK - · invite)
+  DO  Mitsuki has grown close to {{user}} (Affection >= 30). In a quiet, unguarded moment she brings up
+    her childhood on her own - and, working up the nerve, INVITES {{user}} to visit the little elementary
+    school across town where she grew up. Play it nostalgic and a touch shy; it plainly means something to
+    her. Keep the beat to the invitation and {{user}}'s response - do NOT time-skip to the visit itself.
+    Weave in ONLY the present cast; never force-spawn an absent heroine.
+  FIRE  emit /Intent/eventFire "demo_mitsukielementary_1" -> the engine opens the quest (Step 1: visit the
+    elementary school with Mitsuki) and registers the school as a discovered venue.
+</Event_Pack>
+<%_ } _%>

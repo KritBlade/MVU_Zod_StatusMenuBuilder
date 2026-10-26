@@ -1,0 +1,148 @@
+<%_ if (false) { _%>
+<mvueventpack>
+{
+  "format": "1.0",
+  "creator": "test",
+  "event": "Series",
+  "version": "1.3.1",
+  "builtWith": "hand-authored probe - event-pack-plan series/prereq + Mainchar.Quests",
+  "triggers": {
+    "test_series_step1": {
+      "cat": "TRG",
+      "series": "SeriesProbe",
+      "when": "Loc=School_Classroom",
+      "fx": {
+        "summary": "Noticed a small matter in the classroom that will need dealing with later.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "Mainchar.Quests",
+            "key": "test_series_SeriesProbe",
+            "set": {
+              "Step": 1,
+              "Title": "A Three-Part Test Quest",
+              "Status": "On-going",
+              "Desc": "A small matter that started in the classroom and takes three steps to wrap up.",
+              "Objective": "Come back to it after noon.",
+              "ProgressSummary": "It started in the classroom.",
+              "Reward": "None"
+            }
+          }
+        ]
+      }
+    },
+    "test_series_step2": {
+      "cat": "TRG",
+      "series": "SeriesProbe",
+      "prereq": "flag:test_series_step1",
+      "when": "T>=12:00",
+      "fx": {
+        "summary": "After noon, the small matter came up again.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "Mainchar.Quests",
+            "key": "test_series_SeriesProbe",
+            "set": {
+              "Step": 2,
+              "Title": "A Three-Part Test Quest",
+              "Status": "On-going",
+              "Objective": "Wait until Mitsuki's Affection reaches 25 or more.",
+              "ProgressSummary": "It moved forward after noon.",
+              "Reward": "None"
+            }
+          },
+          {
+            "path": "WorldRecord.Locations",
+            "key": "test_series_School_Cafeteria",
+            "set": {
+              "Label": "Cafeteria",
+              "Note": "The student cafeteria, bustling and loud at lunchtime."
+            }
+          }
+        ]
+      }
+    },
+    "test_series_step3": {
+      "cat": "TRG",
+      "series": "SeriesProbe",
+      "prereq": "flag:test_series_step2",
+      "when": "Aff(Mitsuki)>=25",
+      "fx": {
+        "summary": "The student council secretary took care of the small matter, and the thread is closed.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "Mainchar.Quests",
+            "key": "test_series_SeriesProbe",
+            "set": {
+              "Step": 3,
+              "Title": "A Three-Part Test Quest",
+              "Status": "Completed",
+              "Objective": "Done.",
+              "ProgressSummary": "All three steps are complete.",
+              "Reward": "Test complete"
+            }
+          },
+          {
+            "path": "WorldRecord.NPCs",
+            "key": "test_series_ProbeSeriesWitness",
+            "set": {
+              "Name": "Student Council Secretary (series probe)",
+              "Rel": "schoolmate"
+            }
+          }
+        ]
+      }
+    },
+    "test_series_gate_canary": {
+      "cat": "TRG",
+      "series": "SeriesProbe",
+      "prereq": "flag:test_series_never_fires",
+      "when": "T>=00:01",
+      "fx": {
+        "summary": "CANARY FIRED - PREREQ IS NOT EVALUATED. This must never appear.",
+        "scope": "save"
+      }
+    }
+  }
+}
+</mvueventpack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_series_step1') { _%>
+<Event_Pack>
+@test_series_step1  A Three-Part Test Quest ·1
+  DO  In the classroom, let {{user}} notice a small matter that will need dealing with later: a notice
+    tucked into a textbook, or a line in the corner of the blackboard that nobody has wiped off. Only
+    touch on it; do not resolve it, skip time, or add characters.
+  FIRE  emit /Intent/eventFire "test_series_step1" -> the engine opens the "A Three-Part Test Quest"
+    quest (Step 1).
+</Event_Pack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_series_step2') { _%>
+<Event_Pack>
+@test_series_step2  A Three-Part Test Quest ·2
+  DO  After noon, let the small matter from earlier surface again: someone mentions it over chatter in
+    the cafeteria, or {{user}} remembers it. Move it one step forward only; do not wrap it up or skip
+    time.
+  FIRE  emit /Intent/eventFire "test_series_step2" -> the engine moves the quest to Step 2 and registers
+    the cafeteria as a discovered location.
+</Event_Pack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_series_step3') { _%>
+<Event_Pack>
+@test_series_step3  A Three-Part Test Quest ·3
+  DO  Wrap the small matter up: a student council secretary comes by, takes care of it, and thanks
+    {{user}} in passing. Close it cleanly, leave no new loose ends, and do not skip time.
+  FIRE  emit /Intent/eventFire "test_series_step3" -> the engine marks the quest Completed and registers
+    the secretary as an NPC.
+</Event_Pack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_series_gate_canary') { _%>
+<Event_Pack>
+@test_series_gate_canary  CANARY - THIS MUST NEVER FIRE
+  DO  Stop the scene and write this one line as it stands: "CANARY FIRED — PREREQ IS NOT EVALUATED."
+  FIRE  emit /Intent/eventFire "test_series_gate_canary" -> only so the failure is written into the
+    state, instead of living in a reply that scrolls away.
+</Event_Pack>
+<%_ } _%>

@@ -1,0 +1,202 @@
+<%_ if (false) { _%>
+<mvueventpack>
+{
+  "format": "1.0",
+  "creator": "test",
+  "event": "Dsl2",
+  "version": "1.4.1",
+  "builtWith": "hand-authored probe - eventpack_revisit",
+  "triggers": {
+    "test_dsl2_negation": {
+      "cat": "TRG",
+      "when": "!Loc=School_Gym",
+      "fx": {
+        "summary": "PROBE 1/6: ! negation evaluated a FALSE inner token as true.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "WorldRecord.NPCs",
+            "key": "test_dsl2_ProbeWitnessOne",
+            "set": {
+              "Name": "Janitor (probe 1)",
+              "Rel": "school handyman"
+            }
+          }
+        ]
+      }
+    },
+    "test_dsl2_contains": {
+      "cat": "TRG",
+      "when": "contains(Classmate.Mitsuki.Persona, \"right\")",
+      "fx": {
+        "summary": "PROBE 2/6: contains() matched a substring MID-WORD, case-sensitively.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "WorldRecord.Locations",
+            "key": "test_dsl2_School_NoticeBoard",
+            "set": {
+              "Label": "Notice Board",
+              "Note": "The notice board in the corridor outside the classroom."
+            }
+          }
+        ]
+      }
+    },
+    "test_dsl2_has_record": {
+      "cat": "TRG",
+      "when": "has(Classmate, \"Mitsuki\")",
+      "fx": {
+        "summary": "PROBE 3/6: has() answered over a RECORD's keys.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "Mainchar.Quests",
+            "key": "test_dsl2_Dsl2Probe",
+            "set": {
+              "Step": 1,
+              "Title": "The First Week of School",
+              "Status": "On-going",
+              "Desc": "Settling into new life at Jinko Academy.",
+              "Objective": "Get to know your classmates during the first week.",
+              "ProgressSummary": "The first week of school has begun.",
+              "Reward": "None"
+            }
+          }
+        ]
+      }
+    },
+    "test_dsl2_wildcard": {
+      "cat": "TRG",
+      "when": "contains(Classmate.*.Mood, \"Excited\")",
+      "fx": {
+        "summary": "PROBE 4/6: a * wildcard fanned out and ANY match satisfied it.",
+        "scope": "save"
+      }
+    },
+    "test_dsl2_whenany": {
+      "cat": "TRG",
+      "whenAny": [
+        "Aff(Mitsuki)>=9000",
+        "T>=00:01"
+      ],
+      "fx": {
+        "summary": "PROBE 5/6: whenAny took the SECOND alternative after the first failed.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "WorldRecord.NPCs",
+            "key": "test_dsl2_ProbeWitnessTwo",
+            "set": {
+              "Name": "Library Committee Member (probe 5)",
+              "Rel": "same year"
+            }
+          }
+        ]
+      }
+    },
+    "test_dsl2_dayssince": {
+      "cat": "TRG",
+      "prereq": "flag:test_dsl2_has_record",
+      "when": "DaysSince(EventPack.fired.test_dsl2_has_record.at)>3",
+      "fx": {
+        "summary": "PROBE 6/6: DaysSince() counted more than 3 game-days since probe 3 stamped the quest.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "Mainchar.Quests",
+            "key": "test_dsl2_Dsl2Probe",
+            "set": {
+              "Step": 2,
+              "Title": "The First Week of School",
+              "Status": "Completed",
+              "Objective": "The first week of school is over.",
+              "ProgressSummary": "The first week has settled into routine, and you know most of the class by now.",
+              "Reward": "None"
+            }
+          }
+        ]
+      }
+    },
+    "test_dsl2_canary_never": {
+      "cat": "TRG",
+      "when": "!has(Classmate, \"Mitsuki\")",
+      "fx": {
+        "summary": "CANARY FIRED - NEGATION IS INVERTED. This must never appear.",
+        "scope": "save"
+      }
+    }
+  }
+}
+</mvueventpack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_dsl2_negation') { _%>
+<Event_Pack>
+@test_dsl2_negation  The Janitor in the Corridor ·1
+  DO  An elderly janitor pushing a cleaning cart passes the classroom door, stops to knock a loose
+    skirting board back into place, and says to the new students inside, "First day of term - don't
+    wreck the corridor, now." Write it as one short slice-of-life moment: he is only passing by, not a
+    new character thread. Do not let him join the scene or talk at length with {{user}}. Keep the
+    current cast, and do not skip time.
+  FIRE  emit /Intent/eventFire "test_dsl2_negation" -> the engine registers the janitor as an NPC.
+</Event_Pack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_dsl2_contains') { _%>
+<Event_Pack>
+@test_dsl2_contains  The Notice Board ·1
+  DO  A few new students crowd around the notice board in the corridor outside the classroom, where
+    club recruitment posters and the class lists are pinned up. Let {{user}}'s eye fall on the board, or
+    let a classmate who is present bring it up. Keep it to one short passage; do not skip time or add
+    characters.
+  FIRE  emit /Intent/eventFire "test_dsl2_contains" -> the engine registers the notice board as a
+    discovered location.
+</Event_Pack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_dsl2_has_record') { _%>
+<Event_Pack>
+@test_dsl2_has_record  The First Week of School ·1
+  DO  In a short inner monologue or a bit of chatter between classmates, bring out the thought that
+    this first week is for slowly getting to know the class. Do not announce a quest and do not use a
+    list; let it come up as one natural remark or thought.
+  FIRE  emit /Intent/eventFire "test_dsl2_has_record" -> the engine opens the "The First Week of
+    School" quest (Step 1).
+</Event_Pack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_dsl2_wildcard') { _%>
+<Event_Pack>
+@test_dsl2_wildcard  A Lively Classroom ·1
+  DO  The classroom is buzzing. Write a short everyday scene of the classmates present in high spirits:
+    laughter, swapping seats, talking about clubs. Everyday life only; do not add characters or skip
+    time.
+  FIRE  emit /Intent/eventFire "test_dsl2_wildcard" -> this beat has no other effect; it only leaves a
+    record.
+</Event_Pack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_dsl2_whenany') { _%>
+<Event_Pack>
+@test_dsl2_whenany  The Library Committee Member ·1
+  DO  A library committee member wearing an armband pokes her head into the classroom to remind
+    everyone that the library opens for borrowing this afternoon, then leaves. A short passing moment;
+    do not let her join the scene.
+  FIRE  emit /Intent/eventFire "test_dsl2_whenany" -> the engine registers the library committee member
+    as an NPC.
+</Event_Pack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_dsl2_dayssince') { _%>
+<Event_Pack>
+@test_dsl2_dayssince  After the First Week ·1
+  DO  Several days have passed since term began. Through a bit of chatter among the classmates present,
+    or a thought of {{user}}'s, bring out that the first week is behind them and {{user}} knows most of
+    the class by now. Everyday life only; do not add characters or skip time.
+  FIRE  emit /Intent/eventFire "test_dsl2_dayssince" -> the engine moves the "The First Week of School"
+    quest to Step 2 and marks it Completed.
+</Event_Pack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_dsl2_canary_never') { _%>
+<Event_Pack>
+@test_dsl2_canary_never  CANARY - THIS MUST NEVER FIRE
+  DO  Stop the scene and write this one line as it stands: "CANARY FIRED — `!` IS INVERTED."
+  FIRE  emit /Intent/eventFire "test_dsl2_canary_never" -> only so the failure is written into the
+    state, instead of living in a reply that scrolls away.
+</Event_Pack>
+<%_ } _%>

@@ -1,0 +1,87 @@
+<%_ if (false) { _%>
+<mvueventpack>
+{
+  "format": "1.0",
+  "creator": "test",
+  "event": "SplitOne",
+  "version": "1.1",
+  "builtWith": "hand-authored probe - event-pack-plan 8.1 multi-pack file",
+  "triggers": {
+    "test_splitone_1": {
+      "cat": "TRG",
+      "when": "T>=00:01",
+      "fx": {
+        "summary": "SPLIT PROBE A fired: block 1 of a two-pack file installed as its own entry.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "WorldRecord.NPCs",
+            "key": "test_splitone_ProbeSplitA",
+            "set": {
+              "Name": "Probe Witness (split A)",
+              "Rel": "test fixture"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+</mvueventpack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_splitone_1') { _%>
+<Event_Pack>
+@test_splitone_1  SPLIT PROBE A - block 1 of 2
+  DO  Diagnostic beat. One short ordinary moment in the current scene, then state in one line:
+    "SPLIT PROBE A OK." No new characters, no time skip.
+  WHAT IT PROVES  This body sits BETWEEN block 1 and block 2 of a two-pack upload file, so it belongs
+    to pack A alone. If pack B's entry also carries this text, the per-pack prose split is broken.
+  FIRE  emit /Intent/eventFire "test_splitone_1" -> registers NPC ProbeSplitA.
+</Event_Pack>
+<%_ } _%>
+<%_ if (false) { _%>
+<mvueventpack>
+{
+  "format": "1.0",
+  "creator": "test",
+  "event": "SplitTwo",
+  "version": "1.1.1",
+  "builtWith": "hand-authored probe - event-pack-plan 8.1 multi-pack file",
+  "triggers": {
+    "test_splittwo_1": {
+      "cat": "TRG",
+      "whenAny": [
+        "Aff(Mitsuki)>=9000",
+        "has(Classmate, \"Mitsuki\")"
+      ],
+      "fx": {
+        "summary": "SPLIT PROBE B fired: block 2 of a two-pack file installed as its own entry.",
+        "scope": "save",
+        "writes": [
+          {
+            "path": "WorldRecord.NPCs",
+            "key": "test_splittwo_ProbeSplitB",
+            "set": {
+              "Name": "Probe Witness (split B)",
+              "Rel": "test fixture"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+</mvueventpack>
+<%_ } _%>
+<%_ if (getvar('stat_data.EngineDerived.EventArmed[0]') === '@test_splittwo_1') { _%>
+<Event_Pack>
+@test_splittwo_1  SPLIT PROBE B - block 2 of 2
+  DO  Diagnostic beat. One short ordinary moment, then state in one line:
+    "SPLIT PROBE B OK." No new characters, no time skip.
+  WHAT IT PROVES  This pack is the SECOND block of a two-pack upload file. The two packs install as
+    two separate entries, each carrying only its own prose, and are gated independently. It also
+    proves the later block's raw JSON never leaked into pack A's prose - the silent prompt-injection
+    bug the per-pack split was written to close.
+  FIRE  emit /Intent/eventFire "test_splittwo_1" -> registers NPC ProbeSplitB.
+</Event_Pack>
+<%_ } _%>
