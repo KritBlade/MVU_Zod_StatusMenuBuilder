@@ -1,6 +1,7 @@
 // confirm-dialog.ts — the builder's one confirm helper (GUI-DNA §7). askConfirm() opens DnaConfirmDialog, which the
 // shell mounts once, and resolves true only when its action button is pressed; a dialog that cannot open answers no.
 // Every destructive action, and every load over work in progress, asks through here; never the browser's confirm().
+// So every question here is destructive, and opens on Cancel (DnaConfirmDialog).
 import { shallowRef } from 'vue'
 
 export interface ConfirmQuestion {
@@ -9,7 +10,7 @@ export interface ConfirmQuestion {
     answers: string[]                               // one line per answer, each naming its button
     actionText: string                              // the action button's verb
     actionIcon?: string
-    isDanger?: boolean                              // the action destroys something: a danger button, not a primary one
+    isDanger?: boolean                              // a safety question only (GUI-DNA §7): a danger button, not a primary one
 }
 
 export interface PendingConfirm extends ConfirmQuestion {

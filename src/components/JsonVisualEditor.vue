@@ -84,7 +84,6 @@ async function requestRemove() {
             answers: ['Its ' + childCount.value + ' ' + (myType.value === 'array' ? 'items' : 'fields') + ' are lost with it.', 'Delete removes it; Cancel keeps it.'],
             actionText: 'Delete',
             actionIcon: 'fa-trash',
-            isDanger: true,
         })
         if (!isConfirmed) return
     }

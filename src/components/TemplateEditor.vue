@@ -35,7 +35,6 @@ async function handleRemove(name: string) {
         answers,
         actionText: 'Delete',
         actionIcon: 'fa-trash',
-        isDanger: true,
     })
     if (isConfirmed) removeCustomTemplate(name)
 }
@@ -54,7 +53,6 @@ async function handleResetGlobalCss() {
         answers: ["Your CSS is replaced by the builder's default stylesheet.", 'Reset replaces it; Cancel keeps yours.'],
         actionText: 'Reset',
         actionIcon: 'fa-rotate-left',
-        isDanger: true,
     })
     if (isConfirmed) globalCss.value = EXPORT_CSS_CONTENT
 }
@@ -79,7 +77,6 @@ async function handleResetStaticLocale() {
         answers: ["Your locale strings are replaced by the builder's defaults.", 'Reset replaces them; Cancel keeps yours.'],
         actionText: 'Reset',
         actionIcon: 'fa-rotate-left',
-        isDanger: true,
     })
     if (isConfirmed) {
         staticLocale.value = { ...DEFAULT_STATIC_LOCALE }

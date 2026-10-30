@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // The dialog gene (GUI-DNA §5) for askConfirm(): the question first, what it touches one per line, one line per
-// answer, then the button bar: the action (danger when it destroys something), then Cancel, which has the focus.
+// answer, then the button bar: the action (primary; danger only for a safety question, GUI-DNA §7), then Cancel, which
+// has the focus: every question asked here is destructive, so Enter never says yes.
 // Escape and Cancel answer no; a dialog that cannot open answers no and says why in the console.
 import { ref, watch, nextTick } from 'vue'
 import { pendingConfirm } from './confirm-dialog'

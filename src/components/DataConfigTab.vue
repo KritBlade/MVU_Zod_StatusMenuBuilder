@@ -40,7 +40,6 @@ async function importConfigFile() {
         answers: ['It replaces the layout, data, schema picks, templates, Global CSS and locale now in the builder.', 'Import config replaces them; Cancel keeps yours.'],
         actionText: 'Import config',
         actionIcon: 'fa-file-import',
-        isDanger: true,
     })
     if (!isConfirmed) return
     let text = ''
@@ -88,7 +87,6 @@ async function loadDefaultData() {
         answers: ['It replaces the MVU data now in the builder.', 'Load default data replaces it; Cancel keeps yours.'],
         actionText: 'Load default data',
         actionIcon: 'fa-rotate-left',
-        isDanger: true,
     })
     if (!isConfirmed) return
     // Basic MVU structure

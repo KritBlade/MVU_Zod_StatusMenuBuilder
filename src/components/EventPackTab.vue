@@ -215,7 +215,6 @@ async function removeTrigger(t: TriggerUi) {
         answers: ['Its conditions, effects and scene are lost.', 'Delete removes it; Cancel keeps it.'],
         actionText: 'Delete',
         actionIcon: 'fa-trash',
-        isDanger: true,
     })
     const at = pack.triggers.indexOf(t)
     if (isConfirmed && at !== -1) pack.triggers.splice(at, 1)
@@ -234,7 +233,6 @@ async function removeOrGroup(t: TriggerUi, group: Descriptor[]) {
             answers: ['Its ' + group.length + ' condition' + (group.length === 1 ? ' is' : 's are') + ' lost.', 'Delete removes it; Cancel keeps it.'],
             actionText: 'Delete',
             actionIcon: 'fa-trash',
-            isDanger: true,
         })
         if (!isConfirmed) return
     }
@@ -253,7 +251,6 @@ async function removeWrite(t: TriggerUi, w: WriteUi) {
         answers: ['The fields typed into it are lost.', 'Remove deletes it; Cancel keeps it.'],
         actionText: 'Remove',
         actionIcon: 'fa-trash',
-        isDanger: true,
     })
     const at = t.writes.indexOf(w)
     if (isConfirmed && at !== -1) t.writes.splice(at, 1)
@@ -271,7 +268,6 @@ async function removeReward(t: TriggerUi, r: RewardUi) {
         answers: ['Remove deletes it; Cancel keeps it.'],
         actionText: 'Remove',
         actionIcon: 'fa-trash',
-        isDanger: true,
     })
     const at = t.rewards.indexOf(r)
     if (isConfirmed && at !== -1) t.rewards.splice(at, 1)
@@ -418,7 +414,6 @@ async function loadFromText(txt: string) {
             answers: ['It replaces the ' + count + ' event' + (count === 1 ? '' : 's') + ' now in the editor.', 'Load replaces them; Cancel keeps yours.'],
             actionText: 'Load',
             actionIcon: 'fa-file-import',
-            isDanger: true,
         })
         if (!isConfirmed) return
     }

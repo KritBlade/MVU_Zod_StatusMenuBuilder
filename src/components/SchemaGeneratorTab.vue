@@ -438,7 +438,6 @@ async function resetSelection() {
         answers: ['Picked paths, collections and locks go back to what the data suggests.', 'Reset replaces them; Cancel keeps your picks.'],
         actionText: 'Reset',
         actionIcon: 'fa-rotate-left',
-        isDanger: true,
     })
     if (isConfirmed) initSelection()
 }

@@ -245,11 +245,19 @@ async function resolvePackFormatters(statData) {
     const requests = planPackFormatterRequests(_packState.tabs, statData, COLLECTION_PATHS);
     if (!requests.length) return;
     const reply = await postPackFormatterBatch(requests);
+    // No reply in time means the extension is missing or out of date. A reply without a map is
+    // mvu-helper answering that it cannot format yet, with its reason — expected right after a page
+    // load, when the menu asks before MVU has loaded; the next update asks again.
     if (!reply || !reply.map) {
         if (!_packRpcWarned) {
             _packRpcWarned = true;
-            console.warn('[MZSMB][pack] mvu-helper did not answer the formatter batch (' + requests.length
-                + ' request(s)) — formatter cells keep their raw values. Is the extension installed and up to date?');
+            if (!reply) {
+                console.warn('[MZSMB][pack] mvu-helper did not answer the formatter batch (' + requests.length
+                    + ' request(s)) — formatter cells keep their raw values. Is the extension installed and up to date?');
+            } else {
+                console.info('[MZSMB][pack] mvu-helper could not format this update: ' + (reply.reason || 'it gave no reason')
+                    + ' — formatter cells keep their raw values until the next update.');
+            }
         }
         return;
     }
