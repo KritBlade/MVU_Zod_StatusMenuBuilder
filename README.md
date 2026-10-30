@@ -10,9 +10,9 @@ Version 2 is built for [MVU Helper](https://github.com/KritBlade/mvu-helper) and
 
 ## Getting started
 
-1. Open [dist/index.html](dist/index.html) here on GitHub, and click the download button at the top right.
-2. Double-click `index.html` to open it in your browser.
-3. Click on Data Configuration tab if you have an existing layout want to import.  Otherwise you can start fresh by clicking on Load Default Data to populate sample data so that you can click on the Builder tab to start building.
+1. Open [dist/index.html](https://github.com/KritBlade/MVU_Zod_StatusMenuBuilder/releases) here on GitHub, and click the on the link on the latest version.
+2. Extract the zip file and double-click `index.html` to open it in your browser.
+3. Click on Data Configuration tab if you have an existing layout want to import.  Otherwise you can start fresh by clicking on Load Default Data to populate sample data so that you can click on the Builder tab to start building.  Some sample events are included for you to see how events works.  However, you will need to upload a compatible MVU Game Logic Engine v2.0 [game](https://github.com/KritBlade/ArtificKoi) to create events.
 
 That's it. The whole app is that one file. Nothing gets installed, and nothing is sent anywhere.
 
